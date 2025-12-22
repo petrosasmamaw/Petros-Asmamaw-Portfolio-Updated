@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Project globals */
+:root {
+	color-scheme: dark;
+}
+
+html, body, #root {
+	height: 100%;
+}
+
+/* Base body styling */
+body {
+	background-color: #020617; /* slate-950 */
+	color: #f1f5f9; /* slate-100 */
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Map custom font utility used in components */
+.font-heading {
+  font-family: "Plus Jakarta Sans", Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Glass effect utility used across components */
+.glass {
+	background: rgba(15, 23, 42, 0.7);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-gradient {
+	background: linear-gradient(135deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.4) 100%);
+}
+
+/* small helper classes used in the project */
+.text-gradient {
+	background: linear-gradient(90deg,#c7b9ff,#7dd3fc);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-track {
+	background: #020617;
+}
+::-webkit-scrollbar-thumb {
+	background: #1e293b;
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #334155;
+}
