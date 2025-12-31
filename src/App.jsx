@@ -4,6 +4,7 @@ import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import Expertise from './components/Expertise.jsx';
 import Skills from './components/Skills.jsx';
+import Experience from './components/Experience.jsx';
 import Certificates from './components/Certificates.jsx';
 import Projects from './components/Projects.jsx';
 import Contact from './components/Contact.jsx';
@@ -34,6 +35,7 @@ export default function App() {
         <Hero />
         <Expertise />
         <Skills />
+        <Experience />
         <Certificates />
         <Projects />
         <Contact />
