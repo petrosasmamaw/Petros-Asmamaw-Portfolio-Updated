@@ -56,6 +56,17 @@ export default function WorkExperience() {
                 Detail Oriented
               </span>
             </div>
+            <div className="mt-6">
+              <a
+                href="https://www.upwork.com/freelancers/~0133f4dd6dbac80057"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-2xl font-semibold transition-all"
+              >
+                <img src="https://cdn.simpleicons.org/upwork/06c167" alt="Upwork" className="w-5 h-5" />
+                View on Upwork
+              </a>
+            </div>
           </div>
         </div>
       </div>
