@@ -198,7 +198,7 @@ export const REACT_PROJECTS = [
     type: 'Web',
     image: { src: notertk, alt: 'note taking app' },
     title: 'Updated Create Note',
-    description: 'I’ve upgraded my game website by integrating Supabase authentication and database support, alongside migrating from React Context API to Redux Toolkit (RTK) for state management. This update enhances performance, scalability, and maintainability, enabling efficient handling of global states like user favorites, game details, reviews, and secure user authentication. The result is a more dynamic, interactive, and personalized gaming experience.',
+    description: 'I’ve upgraded my note taking  website by integrating Supabase authentication and database support, alongside migrating from React Context API to Redux Toolkit (RTK) for state management. This update enhances performance, scalability, and maintainability, enabling efficient handling of global states like user favorites, game details, reviews, and secure user authentication. The result is a more dynamic, interactive, and personalized gaming experience.',
     tags: ['HTML5', 'CSS',  'React', 'Redux-toolkit','supabase auth','supabase db'],
     viewDetailsLink: 'https://create-note-authentication.netlify.app/',
     githubLink: 'https://github.com/petrosasmamaw/Create-note-with-supbase-authentication.git',
@@ -224,16 +224,6 @@ export const REACT_PROJECTS = [
     githubLink: 'https://github.com/petrosasmamaw/The-Car-Slide.git',
   },
   {
-    id: 7,
-    type: 'Web',
-    image: { src: notesApp, alt: 'Notes App' },
-    title: 'Create-note',
-    description: 'A visually stunning website for creating and managing notes with a responsive design and mockapi database.',
-    tags: ['HTML5', 'CSS3', 'JavaScript', 'React'],
-    viewDetailsLink: 'https://petros-create-note.netlify.app/',
-    githubLink: 'https://github.com/petrosasmamaw/Petros-Create-Note.git',
-  },
-  {
     id: 8,
     type: 'Web',
     image: { src: college, alt: 'college app' },
@@ -243,24 +233,4 @@ export const REACT_PROJECTS = [
     viewDetailsLink: 'https://petros-college-web.netlify.app/',
     githubLink: 'https://github.com/petrosasmamaw/petros-college.git'
   },
-  {
-    id: 9,
-    type: 'Web',
-    image: { src: quiz, alt: 'quiz app' },
-    title: 'Create-quiz',
-    description: 'A simple and fun quiz game built with React. Users can answer multiple-choice questions, get instant feedback, and track their score. The app is responsive, easy to use, and the questions can be customized to fit any topic.',
-    tags: ['HTML5', 'CSS3', 'JavaScript', 'React'],
-    viewDetailsLink: 'https://petros-quiz-web.netlify.app/',
-    githubLink: 'https://github.com/petrosasmamaw/Petros-quiz.git'
-  },
-  {
-    id: 10,
-    type: 'Web',
-    image: { src: portfolio, alt: 'portfolio app' },
-    title: 'My-portfolio',
-    description: 'A modern and fully responsive portfolio website crafted with React to present my journey, skills, and projects. It delivers a sleek design with fast performance, intuitive navigation, and seamless adaptability across all screen sizes. Built with reusable React components, the site offers a professional showcase of my work while maintaining a user-friendly and engaging experience.',
-    tags: ['HTML5', 'CSS3', 'JavaScript', 'React'],
-    viewDetailsLink: 'https://petros-portfolio-web.netlify.app/',
-    githubLink: 'https://github.com/petrosasmamaw/my-portfolio.git'
-  }
 ];
