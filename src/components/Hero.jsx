@@ -29,9 +29,10 @@ export default function Hero() {
             
             <div className="flex items-center gap-3">
               {[
-                { icon: <Instagram />, link: "https://instagram.comhttps://www.instagram.com/piter._rock?igsh=MXJhbjJ5bnZwMWhoYg==" },
                 { icon: <Linkedin />, link: "https://www.linkedin.com/in/petros-asmamaw-172ab4375?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bx7FClNBmQDm0fhSaWV5Zzg%3D%3D" },
-                { icon: <Send />, link: "https://t.me/Nehemiah00" }
+                { icon: <img src="https://cdn.simpleicons.org/upwork/06c167" alt="Upwork" className="w-5 h-5" />, link: "https://www.upwork.com/freelancers/~0133f4dd6dbac80057" },
+                { icon: <Send />, link: "https://t.me/Nehemiah00" },
+                { icon: <Instagram />, link: "https://instagram.comhttps://www.instagram.com/piter._rock?igsh=MXJhbjJ5bnZwMWhoYg==" }
               ].map((social, i) => (
                 <a key={i} href={social.link} className="p-4 glass rounded-2xl text-slate-400 hover:text-white transition-all hover:translate-y-[-2px]">
                   {social.icon}
