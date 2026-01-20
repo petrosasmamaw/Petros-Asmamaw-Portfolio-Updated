@@ -23,6 +23,9 @@ import notesApp from './assets/images-all/notes.png';
 import college from './assets/images-all/college.png';
 import quiz from './assets/images-all/quiz.png';
 import portfolio from './assets/images-all/portfolio.png';
+import hospitalAdmin from './assets/images-all/hospitalAdmin.png';
+import hospitalPatient from './assets/images-all/hospitalPatient.png';
+import hospitalDoctor from './assets/images-all/hospitalDoctor.png';
 
 
 export const EXPERTISE_CARDS = [
@@ -108,6 +111,39 @@ export const FULLSTACK_PROJECTS = [
   {
     id: 1,
     type: 'Web',
+    image: { src: hospitalPatient, alt: 'hospital patient' },
+    title: 'Hospital Patient Dashboard',
+    description:
+      'MERN patient console with Supabase Auth, Redux Toolkit state, and MERN patient/can book the reservation. Secure routes with React Router, real-time updates, and ops tools for patients, staff, inventory, and reviews.',
+    tags: ['node.js','express.js','mongodb','MERN', 'React', 'Redux Toolkit', 'React Router', 'Supabase Auth', 'Airtable', 'Axios', 'Tailwind/CSS'],
+    viewDetailsLink: 'https://hospital-system-patients.vercel.app/',
+    githubLink: 'https://github.com/petrosasmamaw/Hospital-System-Patients.git',
+  },
+  {
+    id: 2,
+    type: 'Web',
+    image: { src: hospitalDoctor, alt: 'hospital doctor' },
+    title: 'Hospital Doctor Dashboard',
+    description:
+      'MERN Doctor console with Supabase Auth, Redux Toolkit state, and MERN product/read bokking and give report for patient . Secure routes with React Router, real-time updates, and ops tools for inventory, users, and reviews.',
+    tags: ['node.js','express.js','mongodb','MERN', 'React', 'Redux Toolkit', 'React Router', 'Supabase Auth', 'Airtable', 'Axios', 'Tailwind/CSS'],
+    viewDetailsLink: 'https://hospital-system-doctors.vercel.app/',
+    githubLink: 'https://github.com/petrosasmamaw/Hospital-System-Doctors.git',
+  },
+  {
+    id: 3,
+    type: 'Web',
+    image: { src: hospitalAdmin, alt: 'hospital Admin' },
+    title: 'Hospital Admin Dashboard',
+    description:
+      'MERN hospital admin console with Supabase Auth, Redux Toolkit state, and MERN patient/content management. Secure routes with React Router, real-time updates, and ops tools for patients, staff, inventory, and reviews.',
+    tags: ['node.js','express.js','mongodb','MERN', 'React', 'Redux Toolkit', 'React Router', 'Supabase Auth', 'Airtable', 'Axios', 'Tailwind/CSS'],
+    viewDetailsLink: 'https://hospital-system-admin.vercel.app/',
+    githubLink: 'https://github.com/petrosasmamaw/Hospital-System-Admin.git',
+  },
+  {
+    id: 4,
+    type: 'Web',
     image: { src: HAdmin, alt: 'hotel admin' },
     title: 'BahiRoom Admin Dashboard',
     description:
@@ -117,7 +153,7 @@ export const FULLSTACK_PROJECTS = [
     githubLink: 'https://github.com/petrosasmamaw/BahiRoom-Admin-Frontend.git',
   },
   {
-    id: 2,
+    id: 5,
     type: 'Web',
     image: { src: hotel, alt: 'hotel' },
     title: 'BahiRoom Hotel Dashboard',
@@ -128,7 +164,7 @@ export const FULLSTACK_PROJECTS = [
     githubLink: 'https://github.com/petrosasmamaw/BahiRoom-Hotel-Frontend.git',
   },
   {
-    id: 3,
+    id: 6,
     type: 'Web',
     image: { src: client, alt: 'client' },
     title: 'BahiRoom Client Dashboard',
@@ -139,7 +175,7 @@ export const FULLSTACK_PROJECTS = [
     githubLink: 'https://github.com/petrosasmamaw/BahiRoom-Client-Frontend.git',
   },
   {
-    id: 4,
+    id: 7,
     type: 'Web',
     image: { src: foodweb, alt: 'food delivery' },
     title: 'Food Delivery Website',
@@ -150,7 +186,7 @@ export const FULLSTACK_PROJECTS = [
     githubLink: 'https://github.com/petrosasmamaw/Food-Delivering-Client-Frontend.git',
   },
   {
-    id: 5,
+    id: 8,
     type: 'Web',
     image: { src: foodadmin, alt: 'food admin' },
     title: 'Food Admin Dashboard',
