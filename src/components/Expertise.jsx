@@ -1,38 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Bot, Brain, Sparkles, Workflow } from 'lucide-react';
-import { EXPERTISE_CARDS } from '../constants.jsx';
-
-const AI_POWERED_APPLICATIONS = [
-  {
-    title: 'AI Content Assistant',
-    tech: 'LLM Integration',
-    description:
-      'Built smart writing workflows with prompt engineering, response refinement, and reusable templates for faster content production.',
-    icon: <Sparkles className="w-6 h-6 text-indigo-400" />,
-  },
-  {
-    title: 'Conversational Chat App',
-    tech: 'Chatbot UX',
-    description:
-      'Designed context-aware chat interfaces with session memory, clear fallback flows, and user-friendly prompt handling.',
-    icon: <Bot className="w-6 h-6 text-blue-400" />,
-  },
-  {
-    title: 'AI Search & Insights',
-    tech: 'Semantic Search',
-    description:
-      'Implemented intelligent retrieval patterns to surface relevant information quickly using embeddings and ranking strategies.',
-    icon: <Brain className="w-6 h-6 text-emerald-400" />,
-  },
-  {
-    title: 'Automation Pipelines',
-    tech: 'Agent Workflows',
-    description:
-      'Created AI-powered automation chains to connect tools, summarize outputs, and streamline repetitive product operations.',
-    icon: <Workflow className="w-6 h-6 text-fuchsia-400" />,
-  },
-];
+import { EXPERTISE_CARDS, AI_POWERED_APPLICATIONS } from '../constants.jsx';
 
 export default function Expertise() {
   return (
@@ -47,7 +15,7 @@ export default function Expertise() {
               whileHover={{ y: -10 }}
               className="p-10 glass rounded-[2.5rem] border-slate-200 dark:border-white/5 text-left flex flex-col items-start transition-all"
             >
-              <div className="mb-6 p-4 bg-indigo-500/10 rounded-2xl">
+              <div className="mb-6 p-4 rounded-2xl bg-white dark:bg-black border border-slate-200 dark:border-slate-800">
                 {card.icon}
               </div>
               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{card.title}</h3>
@@ -69,7 +37,7 @@ export default function Expertise() {
                 whileHover={{ y: -10 }}
                 className="p-10 glass rounded-[2.5rem] border-slate-200 dark:border-white/5 text-left flex flex-col items-start transition-all"
               >
-                <div className="mb-6 p-4 bg-indigo-500/10 rounded-2xl">
+                <div className="mb-6 p-4 rounded-2xl bg-white dark:bg-black border border-slate-200 dark:border-slate-800">
                   {card.icon}
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{card.title}</h3>

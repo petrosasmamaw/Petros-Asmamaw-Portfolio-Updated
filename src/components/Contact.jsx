@@ -62,7 +62,7 @@ export default function Contact() {
                 { icon: <MapPin className="text-emerald-500" />, title: "Address", value: "Bahir Dar, Ethiopia" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-6">
-                  <div className="w-16 h-16 glass rounded-2xl flex items-center justify-center border-slate-300 dark:border-white/5">
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center bg-white dark:bg-black border border-slate-200 dark:border-slate-800">
                     {item.icon}
                   </div>
                   <div>

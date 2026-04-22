@@ -20,7 +20,7 @@ export default function Skills() {
                     whileHover={{ x: 5 }}
                     className="p-5 glass rounded-2xl flex items-center gap-5 group"
                   >
-                    <div className="w-12 h-12 bg-slate-100 dark:bg-slate-700 rounded-xl flex items-center justify-center border border-slate-200 dark:border-slate-600 transition-colors">
+                    <div className="w-12 h-12 bg-white dark:bg-black rounded-xl flex items-center justify-center border border-slate-200 dark:border-slate-800 transition-colors">
                         {skill.iconComponent ? (
                           <span className="inline-flex items-center justify-center">{skill.iconComponent}</span>
                         ) : (

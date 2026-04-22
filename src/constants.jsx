@@ -3,7 +3,7 @@ import {
   Monitor, Server, Database, Globe, 
   Layout, Cpu, Settings, Github, 
   Terminal, Layers, Code, HardDrive,
-  Shield, Zap, Chrome
+  Shield, Zap, Chrome, Bot, Brain, Sparkles, Workflow
 } from 'lucide-react';
 import resume from './assets/images-all/resume2.png';
 import certificate1 from './assets/images-all/Petros-Asmamaw-Udemy-Certificate.jpg';
@@ -54,6 +54,37 @@ export const EXPERTISE_CARDS = [
     tech: "Vercel, Netlify, Render, Cloud services",
     description: "Optimize CI/CD, deployments, and performance for fast, reliable production experiences."
   }
+];
+
+export const AI_POWERED_APPLICATIONS = [
+  {
+    title: 'AI Content Assistant',
+    tech: 'LLM Integration',
+    description:
+      'Built smart writing workflows with prompt engineering, response refinement, and reusable templates for faster content production.',
+    icon: <Sparkles className="w-6 h-6 text-indigo-400" />,
+  },
+  {
+    title: 'Conversational Chat App',
+    tech: 'Chatbot UX',
+    description:
+      'Designed context-aware chat interfaces with session memory, clear fallback flows, and user-friendly prompt handling.',
+    icon: <Bot className="w-6 h-6 text-blue-400" />,
+  },
+  {
+    title: 'AI Search & Insights',
+    tech: 'Semantic Search',
+    description:
+      'Implemented intelligent retrieval patterns to surface relevant information quickly using embeddings and ranking strategies.',
+    icon: <Brain className="w-6 h-6 text-emerald-400" />,
+  },
+  {
+    title: 'Automation Pipelines',
+    tech: 'Agent Workflows',
+    description:
+      'Created AI-powered automation chains to connect tools, summarize outputs, and streamline repetitive product operations.',
+    icon: <Workflow className="w-6 h-6 text-fuchsia-400" />,
+  },
 ];
 
 export const SKILL_GROUPS = [
