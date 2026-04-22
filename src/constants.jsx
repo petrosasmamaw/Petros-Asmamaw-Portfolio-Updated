@@ -27,6 +27,11 @@ import portfolio from './assets/images-all/portfolio.png';
 import hospitalAdmin from './assets/images-all/hospitalAdmin.png';
 import hospitalPatient from './assets/images-all/hospitalPatient.png';
 import hospitalDoctor from './assets/images-all/hospitalDoctor.png';
+import qandliai1 from './assets/images-all/qandliai1.png';
+import qandliai2 from './assets/images-all/qandliai2.png';
+import qandliai3 from './assets/images-all/qandliai3.png';
+import qandliai4 from './assets/images-all/qandliai4.png';
+import qandliai5 from './assets/images-all/qandliai5.png';
 
 
 export const EXPERTISE_CARDS = [
@@ -172,6 +177,28 @@ export const CERTIFICATES = [
 ];
 
 export const FULLSTACK_PROJECTS = [
+  {
+    id: 0,
+    type: 'Web',
+    image: { src: qandliai1, alt: 'qandil ai platform' },
+    imageGallery: [
+      { src: qandliai1, alt: 'qandil ai home and features' },
+      { src: qandliai2, alt: 'qandil ai personalized tools' },
+      { src: qandliai3, alt: 'qandil ai learning workflow' },
+      { src: qandliai4, alt: 'qandil ai dashboard and profile' },
+      { src: qandliai5, alt: 'qandil ai ai-tools experience' },
+    ],
+    title: 'Qandil AI - Personalized Learning Assistant Platform',
+    description:
+      'Qandil AI is a full-stack educational platform designed to personalize how students learn based on profile data, study goals, and current understanding level. The product combines AI Assistance, document-to-notes generation, assignment guidance, and image/document analysis in one guided learning environment. It uses dynamic profile-driven prompting, bilingual/translated UI flows, and persistent chat history so learners can track progress over time. Built with modern React/Next architecture, Redux-powered state management, and integrated backend services for scalable, real-world student support.',
+    tags: ['Next.js', 'React', 'Redux Toolkit', 'Supabase', 'Node.js', 'MongoDB', 'AI Integration', 'Prompt Engineering', 'Multilingual UX', 'Tailwind/CSS'],
+    liveLinks: [
+      { label: 'Live Demo', url: 'https://qandil-ai-dep.vercel.app/' },
+    ],
+    repoLinks: [
+      { label: 'GitHub Repo', url: 'https://github.com/petrosasmamaw/Qandil_Ai.git' },
+    ],
+  },
   {
     id: 1,
     type: 'Web',
