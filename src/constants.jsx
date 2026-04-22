@@ -32,6 +32,7 @@ import qandliai2 from './assets/images-all/qandliai2.png';
 import qandliai3 from './assets/images-all/qandliai3.png';
 import qandliai4 from './assets/images-all/qandliai4.png';
 import qandliai5 from './assets/images-all/qandliai5.png';
+import resumePdf from './assets/resume petros asmamaw 2p.pdf';
 
 
 export const EXPERTISE_CARDS = [
@@ -159,6 +160,7 @@ export const CERTIFICATES = [
   {
     title: "My Professional Resume",
     image: resume,
+    fileUrl: resumePdf,
     desc: "A comprehensive look at my professional journey.",
     url: "#"
   },
