@@ -13,19 +13,19 @@ export default function WorkExperience() {
           <div className="flex-1">
             <div className="flex items-start justify-between">
               <div>
-                <h3 className="text-xl font-bold text-white">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
                   React.js Developer — Figma → React
                 </h3>
-                <p className="text-sm text-slate-400 mt-1">
+                <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
                   Upwork · Dec 15, 2025 - Dec 16, 2025 · Fixed price
                 </p>
               </div>
 
               <div className="text-right">
-                <p className="text-sm text-slate-400">$** earned</p>
+                <p className="text-sm text-slate-600 dark:text-slate-400">$** earned</p>
                 <div className="mt-2 inline-flex items-center gap-2 bg-slate-900/40 px-3 py-1 rounded-full">
                   <span className="text-yellow-400 font-bold">5.0</span>
-                  <span className="text-xs text-slate-400">Rating</span>
+                  <span className="text-xs text-slate-600 dark:text-slate-400">Rating</span>
                 </div>
               </div>
             </div>
@@ -34,7 +34,7 @@ export default function WorkExperience() {
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.05 }}
-              className="mt-6 text-slate-300 italic border-l-2 border-indigo-500 pl-4"
+              className="mt-6 text-slate-700 dark:text-slate-300 italic border-l-2 border-indigo-500 pl-4"
             >
               "Excellent work! The transformation from Figma to React was done very
               fast and very neatly. The components are clean, accurate, and
@@ -43,16 +43,16 @@ export default function WorkExperience() {
             </motion.blockquote>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <span className="px-3 py-1 bg-slate-800/40 text-slate-300 rounded-full text-xs">
+              <span className="px-3 py-1 bg-slate-800/40 text-slate-700 dark:text-slate-300 rounded-full text-xs">
                 Reliable
               </span>
-              <span className="px-3 py-1 bg-slate-800/40 text-slate-300 rounded-full text-xs">
+              <span className="px-3 py-1 bg-slate-800/40 text-slate-700 dark:text-slate-300 rounded-full text-xs">
                 Committed to Quality
               </span>
-              <span className="px-3 py-1 bg-slate-800/40 text-slate-300 rounded-full text-xs">
+              <span className="px-3 py-1 bg-slate-800/40 text-slate-700 dark:text-slate-300 rounded-full text-xs">
                 Clear Communicator
               </span>
-              <span className="px-3 py-1 bg-slate-800/40 text-slate-300 rounded-full text-xs">
+              <span className="px-3 py-1 bg-slate-800/40 text-slate-700 dark:text-slate-300 rounded-full text-xs">
                 Detail Oriented
               </span>
             </div>
@@ -76,10 +76,10 @@ export default function WorkExperience() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.15 }}
-        className="p-8 glass rounded-2xl shadow-xl border border-dashed border-slate-700"
+        className="p-8 glass rounded-2xl shadow-xl border border-dashed border-slate-300 dark:border-slate-700"
       >
         <div className="flex items-center gap-6">
-          <div className="w-16 h-16 rounded-xl bg-slate-700/30 flex items-center justify-center text-slate-400 font-black text-xl">
+          <div className="w-16 h-16 rounded-xl bg-slate-700/30 flex items-center justify-center text-slate-600 dark:text-slate-400 font-black text-xl">
             +
           </div>
 
@@ -87,16 +87,16 @@ export default function WorkExperience() {
             <h3 className="text-lg font-semibold text-slate-200">
               Work Experience
             </h3>
-            <p className="text-sm text-slate-400 mt-1 max-w-lg">
+            <p className="text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-lg">
               Additional professional experience will be added here as new
               projects are completed.
             </p>
 
             <div className="mt-4 flex gap-3">
-              <span className="px-3 py-1 bg-slate-800/40 text-slate-400 rounded-full text-xs">
+              <span className="px-3 py-1 bg-slate-800/40 text-slate-600 dark:text-slate-400 rounded-full text-xs">
                 Will be added
               </span>
-              <span className="px-3 py-1 bg-slate-800/40 text-slate-400 rounded-full text-xs">
+              <span className="px-3 py-1 bg-slate-800/40 text-slate-600 dark:text-slate-400 rounded-full text-xs">
                 Future projects
               </span>
             </div>

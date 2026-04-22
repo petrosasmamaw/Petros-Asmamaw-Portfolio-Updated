@@ -37,9 +37,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-slate-900/50">
+    <section id="contact" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-heading font-black mb-16 text-center text-white">
+        <h2 className="text-4xl md:text-5xl font-heading font-black mb-16 text-center text-slate-900 dark:text-white">
           Contact Us
         </h2>
 
@@ -47,10 +47,10 @@ export default function Contact() {
           {/* Left Column: Info */}
           <div className="space-y-12">
             <div>
-              <h3 className="text-3xl font-bold text-white mb-4 leading-tight">
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">
                 Got a project? <br /> Let’s talk about it.
               </h3>
-              <p className="text-slate-400 text-lg">
+              <p className="text-slate-600 dark:text-slate-400 text-lg">
                 I’m currently available for freelance work and full-time roles.
               </p>
             </div>
@@ -62,12 +62,12 @@ export default function Contact() {
                 { icon: <MapPin className="text-emerald-500" />, title: "Address", value: "Bahir Dar, Ethiopia" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-6">
-                  <div className="w-16 h-16 glass rounded-2xl flex items-center justify-center border-white/5">
+                  <div className="w-16 h-16 glass rounded-2xl flex items-center justify-center border-slate-300 dark:border-white/5">
                     {item.icon}
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">{item.title}</h4>
-                    <p className="text-lg font-bold text-white">{item.value}</p>
+                    <p className="text-lg font-bold text-slate-900 dark:text-white">{item.value}</p>
                   </div>
                 </div>
               ))}
@@ -75,50 +75,50 @@ export default function Contact() {
           </div>
 
           {/* Right Column: Form */}
-          <div className="glass p-10 rounded-[2.5rem] border-white/5">
+          <div className="glass p-10 rounded-[2.5rem] border-slate-300 dark:border-white/5">
             {result && (
-              <div className="mb-6 text-center text-white font-semibold">
+              <div className="mb-6 text-center text-slate-900 dark:text-white font-semibold">
                 {result}
               </div>
             )}
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-400 ml-1">Full Name</label>
+                <label className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-1">Full Name</label>
                 <input
                   required
                   name="name"
                   type="text"
                   placeholder="John Doe"
-                  className="w-full bg-slate-950/50 border border-white/5 px-6 py-4 rounded-2xl text-white focus:outline-none focus:border-indigo-500/50"
+                  className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 px-6 py-4 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:border-indigo-500/50"
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-400 ml-1">Email Address</label>
+                <label className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-1">Email Address</label>
                 <input
                   required
                   name="email"
                   type="email"
                   placeholder="john@example.com"
-                  className="w-full bg-slate-950/50 border border-white/5 px-6 py-4 rounded-2xl text-white focus:outline-none focus:border-indigo-500/50"
+                  className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 px-6 py-4 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:border-indigo-500/50"
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-400 ml-1">Phone Number</label>
+                <label className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-1">Phone Number</label>
                 <input
                   name="phone"
                   type="tel"
                   placeholder="+251 900 000 000"
-                  className="w-full bg-slate-950/50 border border-white/5 px-6 py-4 rounded-2xl text-white focus:outline-none focus:border-indigo-500/50"
+                  className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 px-6 py-4 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:border-indigo-500/50"
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-400 ml-1">Message</label>
+                <label className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-1">Message</label>
                 <textarea
                   required
                   name="message"
                   rows={5}
                   placeholder="What’s on your mind?"
-                  className="w-full bg-slate-950/50 border border-white/5 px-6 py-4 rounded-2xl text-white focus:outline-none focus:border-indigo-500/50 resize-none"
+                  className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 px-6 py-4 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:border-indigo-500/50 resize-none"
                 ></textarea>
               </div>
               <button

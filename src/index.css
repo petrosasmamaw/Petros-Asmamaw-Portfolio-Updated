@@ -1,18 +1,46 @@
 @import "tailwindcss";
 
-/* Project globals */
+/* ===== LIGHT MODE (default) ===== */
 :root {
+	color-scheme: light;
+}
+
+html,
+body,
+#root {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #ffffff;
+	color: #111827;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===== DARK MODE (when .dark class is present) ===== */
+html.dark,
+html.dark body,
+html.dark #root {
+	background-color: #020617;
+	color: #f1f5f9;
+}
+
+html.dark {
 	color-scheme: dark;
 }
 
-html, body, #root {
-	height: 100%;
+/* Fallback: keep dark-theme headings visible even if utility dark variants miss */
+html.dark h1.text-slate-900,
+html.dark h2.text-slate-900,
+html.dark h3.text-slate-900,
+html.dark h4.text-slate-900,
+html.dark h5.text-slate-900,
+html.dark h6.text-slate-900 {
+	color: #ffffff;
 }
 
 /* Base body styling */
 body {
-	background-color: #020617; /* slate-950 */
-	color: #f1f5f9; /* slate-100 */
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -21,16 +49,28 @@ body {
   font-family: "Plus Jakarta Sans", Inter, ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Glass effect utility used across components */
+/* Glass effect utility - Light & Dark variants */
 .glass {
 	background: rgba(15, 23, 42, 0.7);
 	backdrop-filter: blur(16px);
 	-webkit-backdrop-filter: blur(16px);
 	border: 1px solid rgba(255, 255, 255, 0.1);
+	transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
+html:not(.dark) .glass {
+	background: rgba(255, 255, 255, 0.7);
+	border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Card gradient - Light & Dark variants */
 .card-gradient {
 	background: linear-gradient(135deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.4) 100%);
+	transition: background 0.3s ease;
+}
+
+html:not(.dark) .card-gradient {
+	background: linear-gradient(135deg, rgba(243, 244, 246, 0.4) 0%, rgba(229, 231, 235, 0.4) 100%);
 }
 
 /* small helper classes used in the project */
@@ -40,17 +80,33 @@ body {
 	-webkit-text-fill-color: transparent;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Light & Dark variants */
 ::-webkit-scrollbar {
 	width: 8px;
 }
+
 ::-webkit-scrollbar-track {
+	background: #ffffff;
+}
+
+html.dark ::-webkit-scrollbar-track {
 	background: #020617;
 }
+
 ::-webkit-scrollbar-thumb {
+	background: #cbd5e1;
+	border-radius: 10px;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
 	background: #1e293b;
 	border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
+	background: #94a3b8;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
 	background: #334155;
 }

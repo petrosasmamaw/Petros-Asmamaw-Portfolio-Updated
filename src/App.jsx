@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Provider, useSelector } from 'react-redux';
 import { motion, useScroll, useSpring } from 'framer-motion';
+import store from './store/store.js';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import Expertise from './components/Expertise.jsx';
@@ -10,7 +12,7 @@ import Projects from './components/Projects.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 
-export default function App() {
+function AppContent() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -18,8 +20,19 @@ export default function App() {
     restDelta: 0.001
   });
 
+  const themeMode = useSelector((state) => state.theme.mode);
+
+  // Apply theme to document on mount and when theme changes
+  useEffect(() => {
+    if (themeMode === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [themeMode]);
+
   return (
-    <div className="relative selection:bg-indigo-500/30">
+    <div className="relative w-full min-h-screen selection:bg-indigo-500/30">
       {/* Global Scroll Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-indigo-500 z-[60] origin-left"
@@ -31,7 +44,7 @@ export default function App() {
       
       <Navbar />
       
-      <main>
+      <main className="w-full">
         <Hero />
         <Expertise />
         <Skills />
@@ -43,5 +56,13 @@ export default function App() {
       
       <Footer />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Provider store={store}>
+      <AppContent />
+    </Provider>
   );
 }

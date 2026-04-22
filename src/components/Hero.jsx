@@ -18,7 +18,7 @@ export default function Hero() {
             Hi, I’m <br />
             <span className="text-gradient">Petros Asmamaw</span>
           </h1>
-          <p className="text-2xl text-slate-400 mb-10 max-w-lg mx-auto lg:mx-0 font-medium">
+          <p className="text-2xl text-slate-600 dark:text-slate-400 mb-10 max-w-lg mx-auto lg:mx-0 font-medium">
             Full-Stack Developer | AI-Powered Applications
           </p>
           
@@ -34,7 +34,7 @@ export default function Hero() {
                 { icon: <Send />, link: "https://t.me/Nehemiah00" },
                 { icon: <Instagram />, link: "https://instagram.comhttps://www.instagram.com/piter._rock?igsh=MXJhbjJ5bnZwMWhoYg==" }
               ].map((social, i) => (
-                <a key={i} href={social.link} className="p-4 glass rounded-2xl text-slate-400 hover:text-white transition-all hover:translate-y-[-2px]">
+                <a key={i} href={social.link} className="p-4 glass rounded-2xl text-slate-600 dark:text-slate-400 hover:text-white transition-all hover:translate-y-[-2px]">
                   {social.icon}
                 </a>
               ))}

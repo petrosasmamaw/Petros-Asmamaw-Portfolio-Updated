@@ -7,7 +7,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-heading font-black mb-16 text-center text-white">Technical Skills</h2>
+        <h2 className="text-4xl md:text-5xl font-heading font-black mb-16 text-center text-slate-900 dark:text-white">Technical Skills</h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {SKILL_GROUPS.map((group, i) => (
@@ -20,7 +20,7 @@ export default function Skills() {
                     whileHover={{ x: 5 }}
                     className="p-5 glass rounded-2xl flex items-center gap-5 group"
                   >
-                    <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center border border-white/5">
+                    <div className="w-12 h-12 bg-slate-100 dark:bg-slate-700 rounded-xl flex items-center justify-center border border-slate-200 dark:border-slate-600 transition-colors">
                         {skill.iconComponent ? (
                           <span className="inline-flex items-center justify-center">{skill.iconComponent}</span>
                         ) : (
@@ -37,7 +37,7 @@ export default function Skills() {
                         )}
                     </div>
                     <div>
-                      <h4 className="font-bold text-white">{skill.name}</h4>
+                      <h4 className="font-bold text-slate-900 dark:text-white">{skill.name}</h4>
                       <p className="text-xs text-slate-500 uppercase tracking-widest font-bold">{skill.desc}</p>
                     </div>
                   </motion.div>

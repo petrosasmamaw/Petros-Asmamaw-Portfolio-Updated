@@ -33,19 +33,19 @@ export const EXPERTISE_CARDS = [
   {
     title: "Frontend Development",
     icon: <Layout className="w-8 h-8 text-indigo-400" />,
-    tech: "HTML, CSS, JavaScript, React",
+    tech: "HTML, CSS, JavaScript, React,next.js, Tailwind CSS",
     description: "Craft pixel-perfect, responsive interfaces with accessible React and Tailwind workflows."
   },
   {
     title: "Backend Development",
     icon: <Cpu className="w-8 h-8 text-blue-400" />,
-    tech: "Node.js, Express.js",
+    tech: "Node.js, Express.js REST APIs, Authentication",
     description: "Build secure, scalable APIs and services using Node.js, Express, and best practices."
   },
   {
     title: "Database Management",
     icon: <HardDrive className="w-8 h-8 text-emerald-400" />,
-    tech: "MongoDB / SQL",
+    tech: "MongoDB / SQL databases, Supabase, Airtable",
     description: "Design resilient, high-performance data models and queries for scalable applications."
   },
   {
