@@ -19,7 +19,7 @@ export default function Hero() {
             <span className="text-gradient">Petros Asmamaw</span>
           </h1>
           <p className="text-2xl text-slate-400 mb-10 max-w-lg mx-auto lg:mx-0 font-medium">
-            Full-Stack Web Developer & Front-End [React.js] Specialist
+            Full-Stack Developer | AI-Powered Applications
           </p>
           
           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10">

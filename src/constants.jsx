@@ -2,7 +2,8 @@ import React from 'react';
 import { 
   Monitor, Server, Database, Globe, 
   Layout, Cpu, Settings, Github, 
-  Terminal, Layers, Code, HardDrive
+  Terminal, Layers, Code, HardDrive,
+  Shield, Zap, Chrome
 } from 'lucide-react';
 import resume from './assets/images-all/resume2.png';
 import certificate1 from './assets/images-all/Petros-Asmamaw-Udemy-Certificate.jpg';
@@ -57,31 +58,63 @@ export const EXPERTISE_CARDS = [
 
 export const SKILL_GROUPS = [
   {
-    title: "Frontend",
+    title: "💻 Frontend",
     skills: [
-      { name: "HTML", icon: "html5", desc: "Semantic structure" },
-      { name: "CSS", icon: "css3", desc: "Responsive design", iconComponent: <Code className="w-6 h-6 text-indigo-400" /> },
+      { name: "HTML5", icon: "html5", desc: "Semantic structure" },
+      { name: "CSS3", icon: "css3", desc: "Styling & layout", iconComponent: <Code className="w-6 h-6 text-indigo-400" /> },
+      { name: "Responsive Web Design", icon: "responsive", desc: "Mobile-first approach" },
       { name: "Tailwind CSS", icon: "tailwindcss", desc: "Utility-first CSS framework" },
       { name: "JavaScript", icon: "javascript", desc: "Dynamic logic" },
-      { name: "React", icon: "react", desc: "Component-driven UI library" },
-      { name: "Redux", icon: "redux", desc: "State management" }
+      { name: "React.js", icon: "react", desc: "Component-driven UI library" },
+      { name: "Redux", icon: "redux", desc: "State management" },
+      { name: "Next.js", icon: "nextdotjs", desc: "React framework & SSR" }
     ]
   },
   {
-    title: "Backend",
+    title: "⚙️ Backend",
     skills: [
       { name: "Node.js", icon: "nodedotjs", desc: "Server-side JS", iconComponent: <Cpu className="w-6 h-6 text-green-400" /> },
-      { name: "Express", icon: "express", desc: "Fast, unopinionated Node.js web framework" },
-      { name: "MongoDB", icon: "mongodb", desc: "NoSQL document database" },
-      { name: "API Development", icon: "postman", desc: "RESTful services" }
+      { name: "Express.js", icon: "express", desc: "Web application framework" },
+      { name: "REST APIs", icon: "postman", desc: "RESTful architecture" },
+      { name: "API Development", icon: "fastapi", desc: "Backend services" }
     ]
   },
   {
-    title: "DevOps & Tools",
+    title: "🗄️ Database",
     skills: [
-      { name: "GitHub", icon: "github", desc: "Version control" },
-      { name: "Deployment", icon: "vercel", desc: "Cloud hosting" },
-      { name: "Developer Tools", icon: "visualstudiocode", desc: "IDE & Debugging", iconComponent: <Monitor className="w-6 h-6 text-slate-300" /> }
+      { name: "MongoDB", icon: "mongodb", desc: "NoSQL document database", iconComponent: <HardDrive className="w-6 h-6 text-green-500" /> },
+      { name: "PostgreSQL", icon: "postgresql", desc: "Relational database" },
+      { name: "Supabase", icon: "supabase", desc: "Backend-as-a-service" },
+      { name: "Airtable", icon: "airtable", desc: "Low-code database platform" }
+    ]
+  },
+  {
+    title: "🔐 Authentication & Security",
+    skills: [
+      { name: "Authentication & Authorization", icon: "auth0", desc: "User access control", iconComponent: <Shield className="w-6 h-6 text-blue-400" /> },
+      { name: "JSON Web Tokens (JWT)", icon: "jwt", desc: "Secure token-based auth" },
+      { name: "Supabase Auth", icon: "supabase", desc: "Modern auth solution" },
+      { name: "Better Auth", icon: "auth0", desc: "Flexible auth framework" }
+    ]
+  },
+  {
+    title: "🧠 AI / Modern Tech",
+    skills: [
+      { name: "AI Application Development", icon: "openai", desc: "AI integration", iconComponent: <Zap className="w-6 h-6 text-yellow-400" /> },
+      { name: "Generative AI Integration", icon: "openai", desc: "AI-powered features" },
+      { name: "LLM APIs (Gemini API)", icon: "google", desc: "Large language models" },
+      { name: "Prompt Engineering", icon: "openai", desc: "AI optimization" }
+    ]
+  },
+  {
+    title: "🛠 DevOps & Tools",
+    skills: [
+      { name: "Git", icon: "git", desc: "Version control system" },
+      { name: "GitHub", icon: "github", desc: "Code repository hosting" },
+      { name: "Vercel", icon: "vercel", desc: "Deployment platform" },
+      { name: "Netlify", icon: "netlify", desc: "Hosting & deployment" },
+      { name: "Debugging", icon: "devto", desc: "Error resolution" },
+      { name: "Chrome DevTools", icon: "googlechrome", desc: "Browser debugging", iconComponent: <Monitor className="w-6 h-6 text-slate-300" /> }
     ]
   }
 ];
