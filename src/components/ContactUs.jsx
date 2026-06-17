@@ -1,0 +1,137 @@
+import React, { useState } from "react";
+import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
+
+export default function ContactUs() {
+  const [result, setResult] = useState(""); // Status message
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSending(true);
+    setResult("Sending...");
+
+    const formData = new FormData(e.target);
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("Message sent successfully!");
+        e.target.reset();
+      } else {
+        setResult("Error: " + data.message);
+        console.error("Web3Forms Error:", data);
+      }
+    } catch (err) {
+      console.error(err);
+      setResult("Something went wrong. Please try again later.");
+    } finally {
+      setSending(false);
+    }
+  };
+
+  return (
+    <section id="contact" className="py-24">
+      <div className="max-w-7xl mx-auto px-6">
+        <h2 className="text-4xl md:text-5xl font-heading font-black mb-16 text-center text-slate-900 dark:text-white">
+          Contact Us
+        </h2>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          {/* Left Column: Info */}
+          <div className="space-y-12">
+            <div>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">
+                Got a project? <br /> Let’s talk about it.
+              </h3>
+              <p className="text-slate-600 dark:text-slate-400 text-lg">
+                I’m currently available for freelance work and full-time roles.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {[
+                { icon: <Mail className="text-indigo-500" />, title: "Email", value: "asmamawpetros@gmail.com" },
+                { icon: <Phone className="text-blue-500" />, title: "Phone", value: "+251 89886956" },
+                { icon: <MapPin className="text-emerald-500" />, title: "Address", value: "Bahir Dar, Ethiopia" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-6">
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center bg-white dark:bg-black border border-slate-200 dark:border-slate-800">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">{item.title}</h4>
+                    <p className="text-lg font-bold text-slate-900 dark:text-white">{item.value}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column: Form */}
+          <div className="glass p-10 rounded-[2.5rem] border-slate-300 dark:border-white/5">
+            {result && (
+              <div className="mb-6 text-center text-slate-900 dark:text-white font-semibold">
+                {result}
+              </div>
+            )}
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-1">Full Name</label>
+                <input
+                  required
+                  name="name"
+                  type="text"
+                  placeholder="John Doe"
+                  className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 px-6 py-4 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:border-indigo-500/50"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-1">Email Address</label>
+                <input
+                  required
+                  name="email"
+                  type="email"
+                  placeholder="john@example.com"
+                  className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 px-6 py-4 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:border-indigo-500/50"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-1">Phone Number</label>
+                <input
+                  name="phone"
+                  type="tel"
+                  placeholder="+251 900 000 000"
+                  className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 px-6 py-4 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:border-indigo-500/50"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-1">Message</label>
+                <textarea
+                  required
+                  name="message"
+                  rows={5}
+                  placeholder="What’s on your mind?"
+                  className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 px-6 py-4 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:border-indigo-500/50 resize-none"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                disabled={sending}
+                className="w-full py-5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-2xl font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-xl shadow-indigo-600/20 active:scale-95"
+              >
+                {sending ? "Sending..." : "Send Message"} <Send size={20} />
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
