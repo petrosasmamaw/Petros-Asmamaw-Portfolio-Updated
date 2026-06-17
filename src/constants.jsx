@@ -32,6 +32,12 @@ import qandliai2 from './assets/images-all/qandliai2.png';
 import qandliai3 from './assets/images-all/qandliai3.png';
 import qandliai4 from './assets/images-all/qandliai4.png';
 import qandliai5 from './assets/images-all/qandliai5.png';
+import ElectricErp1 from './assets/images-all/ElectricErp1.jpg';
+import ElectricErp2 from './assets/images-all/ElectricErp2.jpg';
+import ElectricErp3 from './assets/images-all/ElectricErp3.jpg';
+import lms1 from './assets/images-all/lms1.png';
+import lms2 from './assets/images-all/lms2.png';
+import lms3 from './assets/images-all/lms3.png';
 import resumePdf from './assets/resume petros asmamaw 2p.pdf';
 
 
@@ -204,6 +210,43 @@ export const FULLSTACK_PROJECTS = [
   {
     id: 1,
     type: 'Web',
+    image: { src: ElectricErp1, alt: 'Electric ERP Dashboard' },
+    imageGallery: [
+      { src: ElectricErp1, alt: 'Electric ERP Sales and Stock Tracking' },
+      { src: ElectricErp2, alt: 'Electric ERP Inventory Management' },
+      { src: ElectricErp3, alt: 'Electric ERP Credit and Reporting' },
+    ],
+    title: 'Electric ERP - Lightweight ERP for Local Electrical Supply Businesses',
+    description:
+      'Electric ERP is a lightweight ERP system engineered for local electrical supply businesses, built under a real-world budget constraint of just $100. The goal was simple: replace manual tracking and scattered bookkeeping with a fast, structured system that actually fits how small distributors operate. Built using the PERN stack (PostgreSQL, Express, React, Node.js), the system focuses on practical workflows rather than enterprise complexity. Key features include real-time sales and stock tracking, batch-based inventory management for accurate costing, simple credit and cash flow control for customers and suppliers, and clean reporting for daily business decisions. This project was developed in collaboration with Wendwosen Tessema, focusing on solving real operational problems in local business environments.',
+    tags: ['PERN Stack', 'PostgreSQL', 'Express.js', 'React', 'Node.js', 'Inventory Management', 'Sales Tracking', 'Real-time Updates', 'Business Operations', 'Batch Management'],
+    repoLinks: [
+      { label: 'GitHub Repo', url: '#' },
+    ],
+  },
+  {
+    id: 2,
+    type: 'Web',
+    image: { src: lms1, alt: 'LMS Learning Management System' },
+    imageGallery: [
+      { src: lms1, alt: 'LMS Admin Dashboard' },
+      { src: lms2, alt: 'LMS Student Learning Portal' },
+      { src: lms3, alt: 'LMS Courses and Exams' },
+    ],
+    title: 'LMS - Full Learning Platform for Ethiopian Schools',
+    description:
+      'Full learning platform for Ethiopian schools — courses, exams, video lessons, Chapa payments, AI-generated content, QR attendance, and Cloudinary media hosting. The system integrates courses, exams, video lessons, payment processing through Chapa, AI-generated educational content, QR code-based attendance tracking, and media management via Cloudinary. Built with modern React and Node.js architecture to support real-world educational workflows for schools across Ethiopia.',
+    tags: ['React', 'Express', 'Node.js', 'PostgreSQL', 'Neon', 'Chapa Payments', 'AI Generative', 'ML', 'Cloudinary', 'QR Parser', 'Redux Toolkit', 'Tailwind'],
+    liveLinks: [
+      { label: 'Live Demo', url: 'https://lms-three-lake-48.vercel.app' },
+    ],
+    repoLinks: [
+      { label: 'GitHub Repo', url: '#' },
+    ],
+  },
+  {
+    id: 3,
+    type: 'Web',
     image: { src: hospitalAdmin, alt: 'hospital ecosystem dashboard suite' },
     imageGallery: [
       { src: hospitalPatient, alt: 'hospital patient dashboard' },
@@ -226,7 +269,7 @@ export const FULLSTACK_PROJECTS = [
     ],
   },
   {
-    id: 2,
+    id: 4,
     type: 'Web',
     image: { src: HAdmin, alt: 'bahiroom suite dashboard' },
     imageGallery: [
@@ -250,7 +293,7 @@ export const FULLSTACK_PROJECTS = [
     ],
   },
   {
-    id: 3,
+    id: 5,
     type: 'Web',
     image: { src: foodweb, alt: 'food delivery client and admin' },
     imageGallery: [
