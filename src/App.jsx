@@ -9,7 +9,7 @@ import Skills from './components/Skills.jsx';
 import Experience from './components/Experience.jsx';
 import Certificates from './components/Certificates.jsx';
 import Projects from './components/Projects.jsx';
-import Contact from './components/Contact.jsx';
+import ContactUs from './components/ContactUs.jsx';
 import Footer from './components/Footer.jsx';
 
 function AppContent() {
@@ -51,7 +51,7 @@ function AppContent() {
         <Experience />
         <Certificates />
         <Projects />
-        <Contact />
+        <ContactUs />
       </main>
       
       <Footer />
