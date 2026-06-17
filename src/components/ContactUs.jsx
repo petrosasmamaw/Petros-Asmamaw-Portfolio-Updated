@@ -48,10 +48,10 @@ export default function ContactUs() {
           <div className="space-y-12">
             <div>
               <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">
-                Got a project? <br /> Let’s talk about it.
+                Got a project? <br /> Let's talk about it.
               </h3>
               <p className="text-slate-600 dark:text-slate-400 text-lg">
-                I’m currently available for freelance work and full-time roles.
+                I'm currently available for freelance work and full-time roles.
               </p>
             </div>
 
@@ -117,7 +117,7 @@ export default function ContactUs() {
                   required
                   name="message"
                   rows={5}
-                  placeholder="What’s on your mind?"
+                  placeholder="What's on your mind?"
                   className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 px-6 py-4 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:border-indigo-500/50 resize-none"
                 ></textarea>
               </div>
