@@ -40,7 +40,7 @@ function AppContent() {
       />
       
       {/* Decorative Background */}
-      <div className="fixed inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.02] pointer-events-none z-50"></div>
+      <div className="fixed inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.035] dark:opacity-[0.025] pointer-events-none z-0" aria-hidden="true"></div>
       
       <Navbar />
       

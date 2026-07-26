@@ -76,10 +76,14 @@ const EMBEDDED_CSS = `
 
 @media screen and (max-width: 575px) {
     .cascade-slider_arrow-left {
-        left: 5px;
+        left: 0;
     }
     .cascade-slider_arrow-right {
-        right: 5px;
+        right: 0;
+    }
+    .cascade-slider_item.next,
+    .cascade-slider_item.prev {
+        opacity: 0.35;
     }
 }
 
@@ -312,26 +316,30 @@ export default function ThreeDImageCarousel({
 
         {total > 1 && (
           <>
-            <span
-              className="cascade-slider_arrow cascade-slider_arrow-left rounded-full bg-black/30 text-white p-2 hover:bg-black/60 transition-colors duration-300"
+            <button
+              type="button"
+              aria-label="Previous slide"
+              className="cascade-slider_arrow cascade-slider_arrow-left cursor-pointer rounded-full bg-slate-900/50 dark:bg-black/40 text-white p-1.5 sm:p-2 hover:bg-slate-900/70 dark:hover:bg-black/60 transition-colors duration-300"
               onClick={(e) => {
                 e.stopPropagation();
                 navigate('prev');
               }}
               data-action="prev"
             >
-              <ArrowLeftCircle size={30} />
-            </span>
-            <span
-              className="cascade-slider_arrow cascade-slider_arrow-right rounded-full bg-black/30 text-white p-2 hover:bg-black/60 transition-colors duration-300"
+              <ArrowLeftCircle size={28} />
+            </button>
+            <button
+              type="button"
+              aria-label="Next slide"
+              className="cascade-slider_arrow cascade-slider_arrow-right cursor-pointer rounded-full bg-slate-900/50 dark:bg-black/40 text-white p-1.5 sm:p-2 hover:bg-slate-900/70 dark:hover:bg-black/60 transition-colors duration-300"
               onClick={(e) => {
                 e.stopPropagation();
                 navigate('next');
               }}
               data-action="next"
             >
-              <ArrowRightCircle size={30} />
-            </span>
+              <ArrowRightCircle size={28} />
+            </button>
           </>
         )}
       </div>

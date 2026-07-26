@@ -30,7 +30,7 @@ const ProjectCard = ({ project }) => {
       : 'This project is delivered as a complete, production-style implementation with polished UI and practical workflows.';
 
   return (
-    <div className="glass rounded-[2.5rem] overflow-hidden border-slate-300 dark:border-white/5 p-5 md:p-6">
+    <div className="glass rounded-[1.75rem] sm:rounded-[2.5rem] overflow-hidden border border-slate-200 dark:border-white/10 p-4 sm:p-5 md:p-6">
       <div className="w-full overflow-hidden mb-4 md:mb-5">
         <ThreeDImageCarousel
           slides={slides}
@@ -42,13 +42,16 @@ const ProjectCard = ({ project }) => {
       </div>
 
       <div className="flex flex-col">
-        <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">{project.title}</h3>
-        <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed">{project.description || project.desc}</p>
-        <p className="text-slate-500 dark:text-slate-300 text-sm mb-6 leading-relaxed">{suiteSummary}</p>
+        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-3">{project.title}</h3>
+        <p className="text-slate-600 dark:text-slate-400 text-sm mb-3 sm:mb-4 leading-relaxed">{project.description || project.desc}</p>
+        <p className="text-slate-500 dark:text-slate-400 text-sm mb-5 sm:mb-6 leading-relaxed">{suiteSummary}</p>
 
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
           {tags.map((t, i) => (
-            <span key={i} className="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-lg text-[10px] font-bold uppercase tracking-widest border border-indigo-500/10">
+            <span
+              key={i}
+              className="px-2.5 sm:px-3 py-1 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 rounded-lg text-[10px] font-bold uppercase tracking-widest border border-indigo-500/20"
+            >
               {t}
             </span>
           ))}
@@ -59,16 +62,17 @@ const ProjectCard = ({ project }) => {
             {liveLinks.length > 0 && (
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-2">Live Apps</p>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-3">
                   {liveLinks.map((link) => (
                     <a
                       key={link.label}
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-center text-xs font-bold flex items-center justify-center gap-1.5"
+                      className="cursor-pointer py-2.5 px-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-center text-xs font-bold flex items-center justify-center gap-1.5 transition-colors"
                     >
-                      <ExternalLink size={14} /> {link.label}
+                      <ExternalLink size={14} className="shrink-0" />
+                      <span className="truncate">{link.label}</span>
                     </a>
                   ))}
                 </div>
@@ -78,16 +82,17 @@ const ProjectCard = ({ project }) => {
             {repoLinks.length > 0 && (
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-2">Source Code</p>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-3">
                   {repoLinks.map((repo) => (
                     <a
                       key={repo.label}
                       href={repo.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                        className="py-2 bg-slate-100 hover:bg-slate-200 text-slate-900 dark:bg-white dark:hover:bg-slate-200 dark:text-slate-900 rounded-xl text-center text-xs font-bold border border-slate-300 dark:border-white flex items-center justify-center gap-1.5"
+                      className="cursor-pointer py-2.5 px-3 bg-slate-100 hover:bg-slate-200 text-slate-900 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white rounded-xl text-center text-xs font-bold border border-slate-200 dark:border-slate-600 flex items-center justify-center gap-1.5 transition-colors"
                     >
-                      <Github size={14} /> {repo.label}
+                      <Github size={14} className="shrink-0" />
+                      <span className="truncate">{repo.label}</span>
                     </a>
                   ))}
                 </div>
@@ -95,11 +100,21 @@ const ProjectCard = ({ project }) => {
             )}
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-4">
-            <a href={project.viewDetailsLink || '#'} target="_blank" rel="noopener noreferrer" className="py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-center text-sm font-bold flex items-center justify-center gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <a
+              href={project.viewDetailsLink || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-center text-sm font-bold flex items-center justify-center gap-2 transition-colors"
+            >
               <ExternalLink size={16} /> Details
             </a>
-            <a href={project.githubLink || project.github || '#'} target="_blank" rel="noopener noreferrer" className="py-3 bg-slate-100 hover:bg-slate-200 text-slate-900 dark:bg-white dark:hover:bg-slate-200 dark:text-slate-900 rounded-xl text-center text-sm font-bold border border-slate-300 dark:border-white flex items-center justify-center gap-2">
+            <a
+              href={project.githubLink || project.github || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer py-3 bg-slate-100 hover:bg-slate-200 text-slate-900 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white rounded-xl text-center text-sm font-bold border border-slate-200 dark:border-slate-600 flex items-center justify-center gap-2 transition-colors"
+            >
               <Github size={16} /> GitHub
             </a>
           </div>
@@ -146,18 +161,21 @@ ProjectCard.propTypes = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-heading font-black mb-16 text-center text-slate-900 dark:text-white">Projects</h2>
-        
-        {/* Group 1 */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-10 flex items-center gap-3">
-             <span className="w-12 h-1 bg-indigo-500 rounded-full"></span>
-             Full-Stack Projects
+    <section id="projects" className="py-16 sm:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-black mb-10 sm:mb-16 text-center text-slate-900 dark:text-white">
+          Projects
+        </h2>
+
+        <div className="mb-12 sm:mb-20">
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-6 sm:mb-10 flex items-center gap-3">
+            <span className="w-8 sm:w-12 h-1 bg-indigo-500 rounded-full shrink-0" />
+            Full-Stack Projects
           </h3>
-          <div className="grid grid-cols-1 gap-8">
-            {FULLSTACK_PROJECTS.map((p, i) => <ProjectCard key={i} project={p} />)}
+          <div className="grid grid-cols-1 gap-6 sm:gap-8">
+            {FULLSTACK_PROJECTS.map((p, i) => (
+              <ProjectCard key={i} project={p} />
+            ))}
           </div>
         </div>
       </div>

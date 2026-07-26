@@ -44,25 +44,25 @@ import resumePdf from './assets/resume petros asmamaw 2p.pdf';
 export const EXPERTISE_CARDS = [
   {
     title: "Frontend Development",
-    icon: <Layout className="w-8 h-8 text-indigo-400" />,
+    icon: <Layout className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />,
     tech: "HTML, CSS, JavaScript, React,next.js, Tailwind CSS",
     description: "Craft pixel-perfect, responsive interfaces with accessible React and Tailwind workflows."
   },
   {
     title: "Backend Development",
-    icon: <Cpu className="w-8 h-8 text-blue-400" />,
+    icon: <Cpu className="w-8 h-8 text-blue-600 dark:text-blue-400" />,
     tech: "Node.js, Express.js REST APIs, Authentication",
     description: "Build secure, scalable APIs and services using Node.js, Express, and best practices."
   },
   {
     title: "Database Management",
-    icon: <HardDrive className="w-8 h-8 text-emerald-400" />,
+    icon: <HardDrive className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />,
     tech: "MongoDB / SQL databases, Supabase, Airtable",
     description: "Design resilient, high-performance data models and queries for scalable applications."
   },
   {
     title: "Deployment & Hosting",
-    icon: <Globe className="w-8 h-8 text-purple-400" />,
+    icon: <Globe className="w-8 h-8 text-violet-600 dark:text-purple-400" />,
     tech: "Vercel, Netlify, Render, Cloud services",
     description: "Optimize CI/CD, deployments, and performance for fast, reliable production experiences."
   }
@@ -74,37 +74,37 @@ export const AI_POWERED_APPLICATIONS = [
     tech: 'LLM Integration',
     description:
       'Built smart writing workflows with prompt engineering, response refinement, and reusable templates for faster content production.',
-    icon: <Sparkles className="w-6 h-6 text-indigo-400" />,
+    icon: <Sparkles className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />,
   },
   {
     title: 'Conversational Chat App',
     tech: 'Chatbot UX',
     description:
       'Designed context-aware chat interfaces with session memory, clear fallback flows, and user-friendly prompt handling.',
-    icon: <Bot className="w-6 h-6 text-blue-400" />,
+    icon: <Bot className="w-6 h-6 text-blue-600 dark:text-blue-400" />,
   },
   {
     title: 'AI Search & Insights',
     tech: 'Semantic Search',
     description:
       'Implemented intelligent retrieval patterns to surface relevant information quickly using embeddings and ranking strategies.',
-    icon: <Brain className="w-6 h-6 text-emerald-400" />,
+    icon: <Brain className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />,
   },
   {
     title: 'Automation Pipelines',
     tech: 'Agent Workflows',
     description:
       'Created AI-powered automation chains to connect tools, summarize outputs, and streamline repetitive product operations.',
-    icon: <Workflow className="w-6 h-6 text-fuchsia-400" />,
+    icon: <Workflow className="w-6 h-6 text-fuchsia-600 dark:text-fuchsia-400" />,
   },
 ];
 
 export const SKILL_GROUPS = [
   {
-    title: "💻 Frontend",
+    title: "Frontend",
     skills: [
       { name: "HTML5", icon: "html5", desc: "Semantic structure" },
-      { name: "CSS3", icon: "css3", desc: "Styling & layout", iconComponent: <Code className="w-6 h-6 text-indigo-400" /> },
+      { name: "CSS3", icon: "css3", desc: "Styling & layout", iconComponent: <Code className="w-6 h-6 text-indigo-600 dark:text-indigo-400" /> },
       { name: "Responsive Web Design", icon: "responsive", desc: "Mobile-first approach" },
       { name: "Tailwind CSS", icon: "tailwindcss", desc: "Utility-first CSS framework" },
       { name: "JavaScript", icon: "javascript", desc: "Dynamic logic" },
@@ -114,50 +114,50 @@ export const SKILL_GROUPS = [
     ]
   },
   {
-    title: "⚙️ Backend",
+    title: "Backend",
     skills: [
-      { name: "Node.js", icon: "nodedotjs", desc: "Server-side JS", iconComponent: <Cpu className="w-6 h-6 text-green-400" /> },
+      { name: "Node.js", icon: "nodedotjs", desc: "Server-side JS", iconComponent: <Cpu className="w-6 h-6 text-green-600 dark:text-green-400" /> },
       { name: "Express.js", icon: "express", desc: "Web application framework" },
       { name: "REST APIs", icon: "postman", desc: "RESTful architecture" },
       { name: "API Development", icon: "fastapi", desc: "Backend services" }
     ]
   },
   {
-    title: "🗄️ Database",
+    title: "Database",
     skills: [
-      { name: "MongoDB", icon: "mongodb", desc: "NoSQL document database", iconComponent: <HardDrive className="w-6 h-6 text-green-500" /> },
+      { name: "MongoDB", icon: "mongodb", desc: "NoSQL document database", iconComponent: <HardDrive className="w-6 h-6 text-green-600 dark:text-green-500" /> },
       { name: "PostgreSQL", icon: "postgresql", desc: "Relational database" },
       { name: "Supabase", icon: "supabase", desc: "Backend-as-a-service" },
       { name: "Airtable", icon: "airtable", desc: "Low-code database platform" }
     ]
   },
   {
-    title: "🔐 Authentication & Security",
+    title: "Authentication & Security",
     skills: [
-      { name: "Authentication & Authorization", icon: "auth0", desc: "User access control", iconComponent: <Shield className="w-6 h-6 text-blue-400" /> },
+      { name: "Authentication & Authorization", icon: "auth0", desc: "User access control", iconComponent: <Shield className="w-6 h-6 text-blue-600 dark:text-blue-400" /> },
       { name: "JSON Web Tokens (JWT)", icon: "jwt", desc: "Secure token-based auth" },
       { name: "Supabase Auth", icon: "supabase", desc: "Modern auth solution" },
       { name: "Better Auth", icon: "auth0", desc: "Flexible auth framework" }
     ]
   },
   {
-    title: "🧠 AI / Modern Tech",
+    title: "AI / Modern Tech",
     skills: [
-      { name: "AI Application Development", icon: "openai", desc: "AI integration", iconComponent: <Zap className="w-6 h-6 text-yellow-400" /> },
+      { name: "AI Application Development", icon: "openai", desc: "AI integration", iconComponent: <Zap className="w-6 h-6 text-amber-500 dark:text-yellow-400" /> },
       { name: "Generative AI Integration", icon: "openai", desc: "AI-powered features" },
       { name: "LLM APIs (Gemini API)", icon: "google", desc: "Large language models" },
       { name: "Prompt Engineering", icon: "openai", desc: "AI optimization" }
     ]
   },
   {
-    title: "🛠 DevOps & Tools",
+    title: "DevOps & Tools",
     skills: [
       { name: "Git", icon: "git", desc: "Version control system" },
       { name: "GitHub", icon: "github", desc: "Code repository hosting" },
       { name: "Vercel", icon: "vercel", desc: "Deployment platform" },
       { name: "Netlify", icon: "netlify", desc: "Hosting & deployment" },
       { name: "Debugging", icon: "devto", desc: "Error resolution" },
-      { name: "Chrome DevTools", icon: "googlechrome", desc: "Browser debugging", iconComponent: <Monitor className="w-6 h-6 text-slate-300" /> }
+      { name: "Chrome DevTools", icon: "googlechrome", desc: "Browser debugging", iconComponent: <Monitor className="w-6 h-6 text-slate-600 dark:text-slate-300" /> }
     ]
   }
 ];
