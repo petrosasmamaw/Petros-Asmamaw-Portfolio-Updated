@@ -27,9 +27,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="py-10 sm:py-12 border-t border-slate-200 dark:border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-        <div className="flex items-center justify-center gap-3 sm:gap-4 mb-5 sm:mb-6">
+    <footer className="py-8 sm:py-10 border-t border-[var(--color-border)]">
+      <div className="page-container text-center">
+        <div className="flex items-center justify-center gap-2 sm:gap-3 mb-5">
           {socials.map((social) => (
             <a
               key={social.label}
@@ -37,14 +37,14 @@ export default function Footer() {
               aria-label={social.label}
               target="_blank"
               rel="noreferrer"
-              className="cursor-pointer p-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-slate-900 dark:hover:bg-white dark:hover:text-slate-900 transition-colors"
+              className="btn-icon surface text-[var(--color-text-muted)] hover:bg-[var(--color-text)] hover:text-white dark:hover:bg-white dark:hover:text-[var(--color-bg)]"
             >
               {social.icon}
             </a>
           ))}
         </div>
 
-        <p className="text-slate-500 dark:text-slate-400 font-medium tracking-wide text-sm sm:text-base">
+        <p className="text-[var(--color-text-subtle)] font-medium tracking-wide text-sm">
           &copy; {year} Petros Asmamaw. All rights reserved.
         </p>
       </div>

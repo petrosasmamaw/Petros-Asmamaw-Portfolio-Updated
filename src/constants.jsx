@@ -3,7 +3,7 @@ import {
   Monitor, Server, Database, Globe, 
   Layout, Cpu, Settings, Github, 
   Terminal, Layers, Code, HardDrive,
-  Shield, Zap, Chrome, Bot, Brain, Sparkles, Workflow
+  Shield, Zap, Chrome, Bot, Brain, Sparkles, Workflow, CreditCard, Smartphone
 } from 'lucide-react';
 import resume from './assets/images-all/resume2.png';
 import certificate1 from './assets/images-all/Petros-Asmamaw-Udemy-Certificate.jpg';
@@ -11,8 +11,6 @@ import certificate2 from './assets/images-all/PetrosAsmamawReact.jpg';
 import HAdmin from './assets/images-all/HAdmin.png';
 import hotel from './assets/images-all/hotel.png';
 import client from './assets/images-all/client.png';
-import foodweb from './assets/images-all/foodweb.png';
-import foodadmin from './assets/images-all/foodadmin.png';
 
 import shopping from './assets/images-all/shopping.png';
 import admin from './assets/images-all/admin.png';
@@ -38,6 +36,12 @@ import ElectricErp3 from './assets/images-all/ElectricErp3.jpg';
 import lms1 from './assets/images-all/lms1.png';
 import lms2 from './assets/images-all/lms2.png';
 import lms3 from './assets/images-all/lms3.png';
+import addisElectric1 from './assets/images-all/addis electric ecommrce site.png';
+import addisElectric2 from './assets/images-all/adiss electric 2.png';
+import addisElectric3 from './assets/images-all/adiss electric 3.png';
+import tamagnCheck1 from './assets/images-all/tamagn check.png';
+import tamagnCheck2 from './assets/images-all/tamagn check 3.png';
+import tamagnCheck3 from './assets/images-all/tamagn check 3 (2).png';
 import resumePdf from './assets/resume petros asmamaw 2p.pdf';
 
 
@@ -103,14 +107,19 @@ export const SKILL_GROUPS = [
   {
     title: "Frontend",
     skills: [
+      { name: "React.js", icon: "react", desc: "Component-driven UI library" },
+      { name: "Next.js", icon: "nextdotjs", desc: "React framework & SSR" },
+      { name: "JavaScript", icon: "javascript", desc: "Dynamic logic" },
+      { name: "TypeScript", icon: "typescript", desc: "Typed JavaScript" },
       { name: "HTML5", icon: "html5", desc: "Semantic structure" },
       { name: "CSS3", icon: "css3", desc: "Styling & layout", iconComponent: <Code className="w-6 h-6 text-indigo-600 dark:text-indigo-400" /> },
-      { name: "Responsive Web Design", icon: "responsive", desc: "Mobile-first approach" },
       { name: "Tailwind CSS", icon: "tailwindcss", desc: "Utility-first CSS framework" },
-      { name: "JavaScript", icon: "javascript", desc: "Dynamic logic" },
-      { name: "React.js", icon: "react", desc: "Component-driven UI library" },
+      { name: "shadcn/ui", icon: "shadcnui", desc: "Accessible UI components" },
+      { name: "Material UI (MUI)", icon: "mui", desc: "React component library" },
+      { name: "Framer Motion", icon: "framer", desc: "UI animation library" },
       { name: "Redux", icon: "redux", desc: "State management" },
-      { name: "Next.js", icon: "nextdotjs", desc: "React framework & SSR" }
+      { name: "Mobile-first design", icon: "responsive", desc: "Responsive layouts" },
+      { name: "Figma", icon: "figma", desc: "Design handoff" }
     ]
   },
   {
@@ -118,6 +127,8 @@ export const SKILL_GROUPS = [
     skills: [
       { name: "Node.js", icon: "nodedotjs", desc: "Server-side JS", iconComponent: <Cpu className="w-6 h-6 text-green-600 dark:text-green-400" /> },
       { name: "Express.js", icon: "express", desc: "Web application framework" },
+      { name: "PHP", icon: "php", desc: "Server-side scripting" },
+      { name: "Laravel", icon: "laravel", desc: "PHP web framework" },
       { name: "REST APIs", icon: "postman", desc: "RESTful architecture" },
       { name: "API Development", icon: "fastapi", desc: "Backend services" }
     ]
@@ -127,6 +138,8 @@ export const SKILL_GROUPS = [
     skills: [
       { name: "MongoDB", icon: "mongodb", desc: "NoSQL document database", iconComponent: <HardDrive className="w-6 h-6 text-green-600 dark:text-green-500" /> },
       { name: "PostgreSQL", icon: "postgresql", desc: "Relational database" },
+      { name: "Neon", icon: "neon", desc: "Serverless Postgres" },
+      { name: "Prisma ORM", icon: "prisma", desc: "Type-safe database ORM" },
       { name: "Supabase", icon: "supabase", desc: "Backend-as-a-service" },
       { name: "Airtable", icon: "airtable", desc: "Low-code database platform" }
     ]
@@ -156,8 +169,18 @@ export const SKILL_GROUPS = [
       { name: "GitHub", icon: "github", desc: "Code repository hosting" },
       { name: "Vercel", icon: "vercel", desc: "Deployment platform" },
       { name: "Netlify", icon: "netlify", desc: "Hosting & deployment" },
+      { name: "Cloudinary", icon: "cloudinary", desc: "Media storage & CDN" },
+      { name: "Google Cloud Platform", icon: "googlecloud", desc: "Cloud infrastructure" },
       { name: "Debugging", icon: "devto", desc: "Error resolution" },
       { name: "Chrome DevTools", icon: "googlechrome", desc: "Browser debugging", iconComponent: <Monitor className="w-6 h-6 text-slate-600 dark:text-slate-300" /> }
+    ]
+  },
+  {
+    title: "Payments",
+    skills: [
+      { name: "Stripe", icon: "stripe", desc: "Online payments" },
+      { name: "Telebirr", icon: "telebirr", desc: "Ethiopian mobile money", iconComponent: <Smartphone className="w-6 h-6 text-emerald-600 dark:text-emerald-400" /> },
+      { name: "Commercial Bank of Ethiopia", icon: "cbe", desc: "Bank payment integration", iconComponent: <CreditCard className="w-6 h-6 text-sky-600 dark:text-sky-400" /> }
     ]
   }
 ];
@@ -188,6 +211,43 @@ export const FULLSTACK_PROJECTS = [
   {
     id: 0,
     type: 'Web',
+    category: 'E-commerce',
+    image: { src: addisElectric1, alt: 'Addis Electric ecommerce homepage' },
+    imageGallery: [
+      { src: addisElectric1, alt: 'Addis Electric trusted electrical supplier homepage' },
+      { src: addisElectric2, alt: 'Addis Electric product browsing and catalog' },
+      { src: addisElectric3, alt: 'Addis Electric store and category experience' },
+    ],
+    title: 'Ecommerce site for Addis Electric',
+    description:
+      'Online marketplace for an Ethiopian electrical supplier with product search, category browsing, admin tools, and phone ordering for industrial and home customers.',
+    tags: ['React', 'Tailwind', 'Node.js', 'Express', 'JWT', 'PostgreSQL', 'Neon'],
+    liveLinks: [
+      { label: 'View Live', url: 'https://addiselectricshop.online/' },
+    ],
+  },
+  {
+    id: 1,
+    type: 'Web',
+    category: 'FinTech / AI',
+    image: { src: tamagnCheck1, alt: 'Tamagn Check receipt verification dashboard' },
+    imageGallery: [
+      { src: tamagnCheck1, alt: 'Tamagn Check receipt verification home' },
+      { src: tamagnCheck2, alt: 'Tamagn Check verification workflow' },
+      { src: tamagnCheck3, alt: 'Tamagn Check API and records management' },
+    ],
+    title: 'Tamagn Check',
+    description:
+      'Receipt verification platform for Telebirr, CBE, Dashen, and BOA payments using screenshots, QR codes, SMS, plus a free tier and paid Verify API.',
+    tags: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Cloudinary', 'Gemini', 'OCR', 'QR Code', 'Better Auth', 'Tailwind'],
+    liveLinks: [
+      { label: 'View Live', url: 'http://tamagncheck.online/' },
+    ],
+  },
+  {
+    id: 2,
+    type: 'Web',
+    category: 'EdTech / AI',
     image: { src: qandliai1, alt: 'qandil ai platform' },
     imageGallery: [
       { src: qandliai1, alt: 'qandil ai home and features' },
@@ -196,9 +256,9 @@ export const FULLSTACK_PROJECTS = [
       { src: qandliai4, alt: 'qandil ai dashboard and profile' },
       { src: qandliai5, alt: 'qandil ai ai-tools experience' },
     ],
-    title: 'Qandil AI - Personalized Learning Assistant Platform',
+    title: 'Qandil AI - Personalized Learning Assistant',
     description:
-      'Qandil AI is a full-stack educational platform designed to personalize how students learn based on profile data, study goals, and current understanding level. The product combines AI Assistance, document-to-notes generation, assignment guidance, and image/document analysis in one guided learning environment. It uses dynamic profile-driven prompting, bilingual/translated UI flows, and persistent chat history so learners can track progress over time. Built with modern React/Next architecture, Redux-powered state management, and integrated backend services for scalable, real-world student support.',
+      'AI learning platform that personalizes study help from student profiles, with document-to-notes tools, chat history, bilingual UI, and scalable backend services.',
     tags: ['Next.js', 'React', 'Redux Toolkit', 'Supabase', 'Node.js', 'MongoDB', 'AI Integration', 'Prompt Engineering', 'Multilingual UX', 'Tailwind/CSS'],
     liveLinks: [
       { label: 'Live Demo', url: 'https://qandil-ai-dep.vercel.app/' },
@@ -208,34 +268,36 @@ export const FULLSTACK_PROJECTS = [
     ],
   },
   {
-    id: 1,
+    id: 3,
     type: 'Web',
+    category: 'ERP / Business',
     image: { src: ElectricErp1, alt: 'Electric ERP Dashboard' },
     imageGallery: [
       { src: ElectricErp1, alt: 'Electric ERP Sales and Stock Tracking' },
       { src: ElectricErp2, alt: 'Electric ERP Inventory Management' },
       { src: ElectricErp3, alt: 'Electric ERP Credit and Reporting' },
     ],
-    title: 'Electric ERP - Lightweight ERP for Local Electrical Supply Businesses',
+    title: 'Electric ERP - Local Supply Business System',
     description:
-      'Electric ERP is a lightweight ERP system engineered for local electrical supply businesses, built under a real-world budget constraint of just $100. The goal was simple: replace manual tracking and scattered bookkeeping with a fast, structured system that actually fits how small distributors operate. Built using the PERN stack (PostgreSQL, Express, React, Node.js), the system focuses on practical workflows rather than enterprise complexity. Key features include real-time sales and stock tracking, batch-based inventory management for accurate costing, simple credit and cash flow control for customers and suppliers, and clean reporting for daily business decisions. This project was developed in collaboration with Wendwosen Tessema, focusing on solving real operational problems in local business environments.',
+      'Lightweight PERN ERP for electrical suppliers with sales tracking, batch inventory, credit control, and daily reporting built for real local business workflows.',
     tags: ['PERN Stack', 'PostgreSQL', 'Express.js', 'React', 'Node.js', 'Inventory Management', 'Sales Tracking', 'Real-time Updates', 'Business Operations', 'Batch Management'],
     repoLinks: [
       { label: 'GitHub Repo', url: '#' },
     ],
   },
   {
-    id: 2,
+    id: 4,
     type: 'Web',
+    category: 'EdTech',
     image: { src: lms1, alt: 'LMS Learning Management System' },
     imageGallery: [
       { src: lms1, alt: 'LMS Admin Dashboard' },
       { src: lms2, alt: 'LMS Student Learning Portal' },
       { src: lms3, alt: 'LMS Courses and Exams' },
     ],
-    title: 'LMS - Full Learning Platform for Ethiopian Schools',
+    title: 'LMS - Learning Platform for Ethiopian Schools',
     description:
-      'Full learning platform for Ethiopian schools — courses, exams, video lessons, Chapa payments, AI-generated content, QR attendance, and Cloudinary media hosting. The system integrates courses, exams, video lessons, payment processing through Chapa, AI-generated educational content, QR code-based attendance tracking, and media management via Cloudinary. Built with modern React and Node.js architecture to support real-world educational workflows for schools across Ethiopia.',
+      'School learning platform with courses, exams, video lessons, Chapa payments, AI content tools, QR attendance, and Cloudinary media for real classroom workflows.',
     tags: ['React', 'Express', 'Node.js', 'PostgreSQL', 'Neon', 'Chapa Payments', 'AI Generative', 'ML', 'Cloudinary', 'QR Parser', 'Redux Toolkit', 'Tailwind'],
     liveLinks: [
       { label: 'Live Demo', url: 'https://lms-three-lake-48.vercel.app' },
@@ -245,17 +307,18 @@ export const FULLSTACK_PROJECTS = [
     ],
   },
   {
-    id: 3,
+    id: 5,
     type: 'Web',
+    category: 'Healthcare',
     image: { src: hospitalAdmin, alt: 'hospital ecosystem dashboard suite' },
     imageGallery: [
       { src: hospitalPatient, alt: 'hospital patient dashboard' },
       { src: hospitalDoctor, alt: 'hospital doctor dashboard' },
       { src: hospitalAdmin, alt: 'hospital admin dashboard' },
     ],
-    title: 'Hospital Management Ecosystem (Patient, Doctor, Admin)',
+    title: 'Hospital Management Ecosystem',
     description:
-      'A complete healthcare product ecosystem built with MERN and delivered through three connected applications. The Patient app focuses on appointments, reservations, and personal follow-up workflows; the Doctor app supports day-to-day clinical flow, patient updates, and reporting; and the Admin app manages staff, inventory, system operations, and platform governance. Shared authentication, protected routes, centralized Redux state, and reusable APIs keep all portals synchronized and production-ready.',
+      'Three-portal MERN healthcare suite for patients, doctors, and admins with shared auth, appointments, clinical updates, inventory control, and synchronized APIs.',
     tags: ['node.js','express.js','mongodb','MERN', 'React', 'Redux Toolkit', 'React Router', 'Supabase Auth', 'Airtable', 'Axios', 'Tailwind/CSS'],
     liveLinks: [
       { label: 'Patient', url: 'https://hospital-system-patients.vercel.app/' },
@@ -269,17 +332,18 @@ export const FULLSTACK_PROJECTS = [
     ],
   },
   {
-    id: 4,
+    id: 6,
     type: 'Web',
+    category: 'Booking Platform',
     image: { src: HAdmin, alt: 'bahiroom suite dashboard' },
     imageGallery: [
       { src: client, alt: 'bahiroom client dashboard' },
       { src: hotel, alt: 'bahiroom hotel dashboard' },
       { src: HAdmin, alt: 'bahiroom admin dashboard' },
     ],
-    title: 'BahiRoom Booking Ecosystem (Client, Hotel, Admin)',
+    title: 'BahiRoom Booking Ecosystem',
     description:
-      'A multi-portal room-booking ecosystem composed of three focused applications that work as one platform. The Client app provides property discovery, booking, and reservation tracking; the Hotel app gives each property team tools for managing listings, availability, and operational insights; and the Admin app handles global moderation, user controls, and system-wide management. The stack is powered by MERN architecture, shared authentication, modular APIs, and scalable Redux state flows for reliable performance across roles.',
+      'Multi-portal room booking platform for clients, hotels, and admins with listings, reservations, moderation tools, shared auth, and scalable Redux state flows.',
     tags: ['node.js','express.js','mongodb','MERN', 'React', 'Redux Toolkit', 'React Router', 'Supabase Auth', 'Airtable', 'Axios', 'Tailwind/CSS'],
     liveLinks: [
       { label: 'Client', url: 'https://bahi-room-client-frontend.vercel.app/' },
@@ -290,28 +354,6 @@ export const FULLSTACK_PROJECTS = [
       { label: 'Client Repo', url: 'https://github.com/petrosasmamaw/BahiRoom-Client-Frontend.git' },
       { label: 'Hotel Repo', url: 'https://github.com/petrosasmamaw/BahiRoom-Hotel-Frontend.git' },
       { label: 'Admin Repo', url: 'https://github.com/petrosasmamaw/BahiRoom-Admin-Frontend.git' },
-    ],
-  },
-  {
-    id: 5,
-    type: 'Web',
-    image: { src: foodweb, alt: 'food delivery client and admin' },
-    imageGallery: [
-      { src: foodweb, alt: 'food delivery client view' },
-      { src: foodadmin, alt: 'food delivery admin dashboard' },
-      { src: foodweb, alt: 'food ordering experience' },
-    ],
-    title: 'Food Delivery Platform (Client + Admin)',
-    description:
-      'A full food-delivery platform implemented as two coordinated experiences: a client-facing ordering application and an admin operations dashboard. Customers can browse restaurants, manage carts, and place orders through a responsive interface, while the admin side handles menu CRUD, order flow oversight, and operational control. Built with secure authentication, React Router navigation, Redux Toolkit state management, and REST-driven APIs to support real-world product workflows.',
-    tags: ['MERN', 'React', 'Redux Toolkit', 'React Router', 'Supabase Auth', 'Stripe', 'Axios', 'Responsive', 'Tailwind/CSS'],
-    liveLinks: [
-      { label: 'Client', url: 'https://food-delivering-client-frontend-9jd.vercel.app/' },
-      { label: 'Admin', url: 'https://food-delivery-admin-frontend-beta.vercel.app/' },
-    ],
-    repoLinks: [
-      { label: 'Client Repo', url: 'https://github.com/petrosasmamaw/Food-Delivering-Client-Frontend.git' },
-      { label: 'Admin Repo', url: 'https://github.com/petrosasmamaw/Food-Delivery-Admin-Frontend.git' },
     ],
   }
 ];

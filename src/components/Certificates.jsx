@@ -5,13 +5,11 @@ import { CERTIFICATES } from '../constants.jsx';
 
 export default function Certificates() {
   return (
-    <section id="certificates" className="py-16 sm:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-black mb-10 sm:mb-16 text-slate-900 dark:text-white">
-          Resume &amp; Certificates
-        </h2>
+    <section id="certificates" className="page-section">
+      <div className="page-container text-center">
+        <h2 className="section-title">Resume &amp; Certificates</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {CERTIFICATES.map((cert, i) => {
             const src = cert.image;
             const fileUrl = cert.fileUrl || src;
@@ -21,8 +19,9 @@ export default function Certificates() {
             return (
               <motion.div
                 key={i}
-                whileHover={{ scale: 1.02 }}
-                className="group glass rounded-[1.75rem] sm:rounded-[2.5rem] overflow-hidden border border-slate-200 dark:border-white/10 flex flex-col h-full"
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.2 }}
+                className="group glass rounded-2xl sm:rounded-3xl overflow-hidden border border-[var(--color-border)] flex flex-col h-full text-left"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
@@ -35,18 +34,18 @@ export default function Certificates() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Open ${cert.title}`}
-                    className="absolute inset-0 bg-slate-900/0 hover:bg-slate-900/45 active:bg-slate-900/45 transition-colors flex items-center justify-center cursor-pointer"
+                    className="absolute inset-0 bg-slate-900/0 hover:bg-slate-900/45 active:bg-slate-900/45 transition-colors duration-200 flex items-center justify-center cursor-pointer"
                   >
-                    <ExternalLink className="text-white w-9 h-9 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity drop-shadow-lg" />
+                    <ExternalLink className="text-white w-8 h-8 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity drop-shadow-lg" />
                   </a>
                 </div>
-                <div className="p-5 sm:p-8 text-left flex-grow flex flex-col">
-                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2">{cert.title}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm mb-6 sm:mb-8 flex-grow">{cert.desc}</p>
+                <div className="p-4 sm:p-6 flex-grow flex flex-col">
+                  <h3 className="text-base sm:text-lg font-bold text-[var(--color-text)] mb-2 leading-snug">{cert.title}</h3>
+                  <p className="text-[var(--color-text-muted)] text-sm mb-5 flex-grow">{cert.desc}</p>
                   <a
                     href={fileUrl}
                     download={filename}
-                    className="cursor-pointer mt-auto py-3.5 sm:py-4 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-2xl flex items-center justify-center gap-2 font-bold text-slate-900 dark:text-white transition-colors border border-slate-200 dark:border-slate-700"
+                    className="btn-icon w-full min-h-11 surface text-[var(--color-text)] hover:bg-[var(--color-surface-muted)] font-bold text-sm gap-2"
                   >
                     <Download size={18} /> Download
                   </a>

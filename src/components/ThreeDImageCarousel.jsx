@@ -7,7 +7,7 @@ const EMBEDDED_CSS = `
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
-  height: 190px;
+  height: 110px;
     z-index: 20;
     user-select: none;
     -webkit-user-select: none;
@@ -69,8 +69,8 @@ const EMBEDDED_CSS = `
     cursor: pointer;
     z-index: 6;
     transform: translate(0, -50%);
-    width: 40px;
-    height: 40px;
+    width: 28px;
+    height: 28px;
     transition: all 0.3s ease;
 }
 
@@ -83,11 +83,19 @@ const EMBEDDED_CSS = `
     }
     .cascade-slider_item.next,
     .cascade-slider_item.prev {
-        opacity: 0.35;
+        opacity: 0.25;
+    }
+    .cascade-slider_arrow svg {
+        width: 18px;
+        height: 18px;
     }
 }
 
 @media screen and (min-width: 576px) {
+    .cascade-slider_arrow {
+        width: 40px;
+        height: 40px;
+    }
     .cascade-slider_arrow-left {
         left: -4%;
     }
@@ -97,9 +105,9 @@ const EMBEDDED_CSS = `
 }
 
 .cascade-slider_slides img {
-  max-width: 170px;
+  max-width: 95px;
     height: auto;
-  border-radius: 28px;
+  border-radius: 12px;
     display: block;
     transition: filter 1s ease;
   aspect-ratio: 16 / 10;
@@ -112,19 +120,21 @@ const EMBEDDED_CSS = `
 
 @media screen and (min-width: 414px) {
     .cascade-slider_container {
-    height: 220px;
+    height: 125px;
     }
     .cascade-slider_slides img {
-    max-width: 210px;
+    max-width: 110px;
+    border-radius: 14px;
     }
 }
 
 @media screen and (min-width: 576px) {
     .cascade-slider_container {
-    height: 250px;
+    height: 200px;
     }
     .cascade-slider_slides img {
-    max-width: 235px;
+    max-width: 200px;
+    border-radius: 22px;
     }
 }
 
@@ -136,7 +146,11 @@ const EMBEDDED_CSS = `
         transform: translateY(-50%) translateX(25%) scale(0.6);
     }
     .cascade-slider_slides img {
-      max-width: 255px;
+      max-width: 230px;
+      border-radius: 24px;
+    }
+    .cascade-slider_container {
+      height: 230px;
     }
 }
 
@@ -158,10 +172,11 @@ const EMBEDDED_CSS = `
         z-index: 2;
     }
     .cascade-slider_slides img {
-      max-width: 285px;
+      max-width: 270px;
+      border-radius: 28px;
     }
     .cascade-slider_container {
-      height: 300px;
+      height: 280px;
     }
 }
 
@@ -179,11 +194,11 @@ const EMBEDDED_CSS = `
         transform: translateY(-50%) translateX(80%) scale(0.37);
     }
     .cascade-slider_slides img {
-      max-width: 320px;
+      max-width: 300px;
     }
 
     .cascade-slider_container {
-      height: 320px;
+      height: 300px;
     }
 }
 `;

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, Layers } from 'lucide-react';
 import { FULLSTACK_PROJECTS } from '../constants.jsx';
 import ThreeDImageCarousel from './ThreeDImageCarousel.jsx';
 
@@ -24,109 +24,131 @@ const ProjectCard = ({ project }) => {
   const liveLinks = project.liveLinks || [];
   const repoLinks = project.repoLinks || [];
   const tags = project.tags || project.tech || [];
-  const suiteSummary =
-    liveLinks.length > 0
-      ? `This suite includes ${liveLinks.map((link) => link.label).join(', ')} experiences in one ecosystem.`
-      : 'This project is delivered as a complete, production-style implementation with polished UI and practical workflows.';
+  const isLive = liveLinks.length > 0;
+  const mobileTags = tags.slice(0, 3);
+  const category = project.category || project.type || 'Full-Stack';
 
   return (
-    <div className="glass rounded-[1.75rem] sm:rounded-[2.5rem] overflow-hidden border border-slate-200 dark:border-white/10 p-4 sm:p-5 md:p-6">
-      <div className="w-full overflow-hidden mb-4 md:mb-5">
+    <article className="glass rounded-2xl sm:rounded-3xl overflow-hidden border border-[var(--color-border)] p-2.5 sm:p-4 md:p-5 h-full flex flex-col min-w-0">
+      {/* Card header */}
+      <div className="flex items-center justify-between gap-2 mb-2.5 sm:mb-3 min-h-8">
+        <div className="inline-flex items-center gap-1.5 min-w-0 rounded-full px-2 sm:px-2.5 py-1 bg-[var(--color-accent-soft)] text-[var(--color-accent-text)]">
+          <Layers size={12} className="shrink-0 hidden xs:block sm:block" aria-hidden="true" />
+          <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider truncate">
+            {category}
+          </span>
+        </div>
+        <span
+          className={`inline-flex items-center px-2 py-0.5 rounded-full text-[8px] sm:text-[10px] font-bold uppercase tracking-wider shrink-0 border ${
+            isLive
+              ? 'bg-[var(--color-success-soft)] text-[var(--color-success)] border-emerald-200/60 dark:border-emerald-500/20'
+              : 'bg-[var(--color-surface-muted)] text-[var(--color-text-subtle)] border-[var(--color-border)]'
+          }`}
+        >
+          {isLive ? 'Live' : 'Code'}
+        </span>
+      </div>
+
+      <div className="w-full overflow-hidden mb-2.5 sm:mb-4 rounded-xl sm:rounded-2xl bg-[var(--color-surface-muted)]">
         <ThreeDImageCarousel
           slides={slides}
           itemCount={3}
           autoplay
-          delay={2.8}
+          delay={3}
           pauseOnHover
         />
       </div>
 
-      <div className="flex flex-col">
-        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-3">{project.title}</h3>
-        <p className="text-slate-600 dark:text-slate-400 text-sm mb-3 sm:mb-4 leading-relaxed">{project.description || project.desc}</p>
-        <p className="text-slate-500 dark:text-slate-400 text-sm mb-5 sm:mb-6 leading-relaxed">{suiteSummary}</p>
+      <div className="flex flex-col flex-1 min-w-0">
+        <h3 className="text-sm sm:text-lg md:text-xl font-bold text-[var(--color-text)] leading-snug line-clamp-2 min-h-[2.5em] sm:min-h-[2.6em] mb-2">
+          {project.title}
+        </h3>
 
-        <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
-          {tags.map((t, i) => (
-            <span
-              key={i}
-              className="px-2.5 sm:px-3 py-1 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 rounded-lg text-[10px] font-bold uppercase tracking-widest border border-indigo-500/20"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
+        <p className="text-[var(--color-text-muted)] text-[11px] sm:text-sm mb-3 leading-relaxed line-clamp-3 min-h-[3.9em] sm:min-h-[4.2em]">
+          {project.description || project.desc}
+        </p>
 
-        {liveLinks.length > 0 || repoLinks.length > 0 ? (
-          <div className="space-y-4">
-            {liveLinks.length > 0 && (
-              <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-2">Live Apps</p>
-                <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-3">
-                  {liveLinks.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="cursor-pointer py-2.5 px-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-center text-xs font-bold flex items-center justify-center gap-1.5 transition-colors"
-                    >
-                      <ExternalLink size={14} className="shrink-0" />
-                      <span className="truncate">{link.label}</span>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {repoLinks.length > 0 && (
-              <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-2">Source Code</p>
-                <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-3">
-                  {repoLinks.map((repo) => (
-                    <a
-                      key={repo.label}
-                      href={repo.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="cursor-pointer py-2.5 px-3 bg-slate-100 hover:bg-slate-200 text-slate-900 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white rounded-xl text-center text-xs font-bold border border-slate-200 dark:border-slate-600 flex items-center justify-center gap-1.5 transition-colors"
-                    >
-                      <Github size={14} className="shrink-0" />
-                      <span className="truncate">{repo.label}</span>
-                    </a>
-                  ))}
-                </div>
-              </div>
+        <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-5 min-h-[1.75rem]">
+          <div className="contents sm:hidden">
+            {mobileTags.map((t) => (
+              <span
+                key={t}
+                className="px-1.5 py-0.5 bg-[var(--color-accent-soft)] text-[var(--color-accent-text)] rounded-md text-[8px] font-bold uppercase tracking-wide"
+              >
+                {t}
+              </span>
+            ))}
+            {tags.length > 3 && (
+              <span className="px-1.5 py-0.5 text-[var(--color-text-subtle)] text-[8px] font-bold">
+                +{tags.length - 3}
+              </span>
             )}
           </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <div className="hidden sm:contents">
+            {tags.slice(0, 6).map((t) => (
+              <span
+                key={t}
+                className="px-2 sm:px-2.5 py-1 bg-[var(--color-accent-soft)] text-[var(--color-accent-text)] rounded-lg text-[9px] sm:text-[10px] font-bold uppercase tracking-wider"
+              >
+                {t}
+              </span>
+            ))}
+            {tags.length > 6 && (
+              <span className="px-2 py-1 text-[var(--color-text-subtle)] text-[10px] font-bold">
+                +{tags.length - 6}
+              </span>
+            )}
+          </div>
+        </div>
+
+        <div className="mt-auto space-y-2">
+          {liveLinks.slice(0, 3).map((link) => (
+            <a
+              key={link.label}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary w-full text-[10px] sm:text-xs py-2.5 min-h-10 sm:min-h-11"
+            >
+              <ExternalLink size={12} className="shrink-0" />
+              <span className="truncate">{link.label}</span>
+            </a>
+          ))}
+
+          {repoLinks.slice(0, 2).map((repo) => (
+            <a
+              key={repo.label}
+              href={repo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-icon w-full surface text-[var(--color-text)] hover:bg-[var(--color-surface-muted)] text-[10px] sm:text-xs font-bold gap-1.5 min-h-10 sm:min-h-11"
+            >
+              <Github size={12} className="shrink-0" />
+              <span className="truncate">{repo.label}</span>
+            </a>
+          ))}
+
+          {!liveLinks.length && !repoLinks.length && (
             <a
               href={project.viewDetailsLink || '#'}
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-pointer py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-center text-sm font-bold flex items-center justify-center gap-2 transition-colors"
+              className="btn-primary w-full text-xs"
             >
-              <ExternalLink size={16} /> Details
+              <ExternalLink size={14} /> Details
             </a>
-            <a
-              href={project.githubLink || project.github || '#'}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cursor-pointer py-3 bg-slate-100 hover:bg-slate-200 text-slate-900 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white rounded-xl text-center text-sm font-bold border border-slate-200 dark:border-slate-600 flex items-center justify-center gap-2 transition-colors"
-            >
-              <Github size={16} /> GitHub
-            </a>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-    </div>
+    </article>
   );
 };
 
 ProjectCard.propTypes = {
   project: PropTypes.shape({
     title: PropTypes.string.isRequired,
+    category: PropTypes.string,
+    type: PropTypes.string,
     image: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.shape({ src: PropTypes.string.isRequired, alt: PropTypes.string }),
@@ -161,18 +183,16 @@ ProjectCard.propTypes = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-16 sm:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-black mb-10 sm:mb-16 text-center text-slate-900 dark:text-white">
-          Projects
-        </h2>
+    <section id="projects" className="page-section">
+      <div className="page-container">
+        <h2 className="section-title">Projects</h2>
 
-        <div className="mb-12 sm:mb-20">
-          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-6 sm:mb-10 flex items-center gap-3">
-            <span className="w-8 sm:w-12 h-1 bg-indigo-500 rounded-full shrink-0" />
+        <div className="mb-4 sm:mb-8">
+          <h3 className="section-subtitle mb-4 sm:mb-8 flex items-center gap-2 sm:gap-3">
+            <span className="w-6 sm:w-10 h-1 bg-[var(--color-accent)] rounded-full shrink-0" aria-hidden="true" />
             Full-Stack Projects
           </h3>
-          <div className="grid grid-cols-1 gap-6 sm:gap-8">
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-5 lg:gap-6 items-stretch">
             {FULLSTACK_PROJECTS.map((p, i) => (
               <ProjectCard key={i} project={p} />
             ))}

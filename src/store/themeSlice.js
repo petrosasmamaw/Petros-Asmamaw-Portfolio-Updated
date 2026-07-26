@@ -20,8 +20,10 @@ const themeSlice = createSlice({
       // Apply theme to document
       if (state.mode === 'dark') {
         document.documentElement.classList.add('dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
       } else {
         document.documentElement.classList.remove('dark');
+        document.documentElement.setAttribute('data-theme', 'light');
       }
     },
     setTheme: (state, action) => {
@@ -30,8 +32,10 @@ const themeSlice = createSlice({
       // Apply theme to document
       if (state.mode === 'dark') {
         document.documentElement.classList.add('dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
       } else {
         document.documentElement.classList.remove('dark');
+        document.documentElement.setAttribute('data-theme', 'light');
       }
     },
   },

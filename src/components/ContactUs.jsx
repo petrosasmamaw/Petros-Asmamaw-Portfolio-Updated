@@ -37,86 +37,64 @@ export default function ContactUs() {
   };
 
   const inputClass =
-    'w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 px-4 sm:px-6 py-3.5 sm:py-4 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-colors';
+    'w-full surface px-4 py-3.5 rounded-xl text-[var(--color-text)] placeholder:text-[var(--color-text-subtle)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20 transition-colors duration-150';
 
   return (
-    <section id="contact" className="py-16 sm:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-black mb-10 sm:mb-16 text-center text-slate-900 dark:text-white">
-          Contact Us
-        </h2>
+    <section id="contact" className="page-section">
+      <div className="page-container">
+        <h2 className="section-title">Contact Us</h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-          <div className="space-y-8 sm:space-y-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="space-y-8">
             <div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-3 sm:mb-4 leading-tight">
+              <h3 className="section-subtitle mb-3 leading-tight">
                 Got a project? <br /> Let&apos;s talk about it.
               </h3>
-              <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
+              <p className="prose-muted text-base sm:text-lg">
                 I&apos;m currently available for freelance work and full-time roles.
               </p>
             </div>
 
-            <div className="space-y-4 sm:space-y-6">
+            <div className="space-y-4">
               {[
-                { icon: <Mail className="text-indigo-500" size={22} />, title: 'Email', value: 'asmamawpetros@gmail.com' },
-                { icon: <Phone className="text-blue-500" size={22} />, title: 'Phone', value: '+251 89886956' },
+                { icon: <Mail className="text-[var(--color-accent)]" size={22} />, title: 'Email', value: 'asmamawpetros@gmail.com' },
+                { icon: <Phone className="text-sky-500" size={22} />, title: 'Phone', value: '+251 89886956' },
                 { icon: <MapPin className="text-emerald-500" size={22} />, title: 'Address', value: 'Bahir Dar, Ethiopia' },
               ].map((item) => (
-                <div key={item.title} className="flex items-center gap-4 sm:gap-6">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 shrink-0 rounded-2xl flex items-center justify-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+                <div key={item.title} className="flex items-center gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-xl flex items-center justify-center surface">
                     {item.icon}
                   </div>
                   <div className="min-w-0">
-                    <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-1">{item.title}</h4>
-                    <p className="text-base sm:text-lg font-bold text-slate-900 dark:text-white break-words">{item.value}</p>
+                    <h4 className="text-xs font-bold text-[var(--color-text-subtle)] uppercase tracking-wider mb-1">{item.title}</h4>
+                    <p className="text-base sm:text-lg font-bold text-[var(--color-text)] break-words">{item.value}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="glass p-5 sm:p-8 md:p-10 rounded-[1.75rem] sm:rounded-[2.5rem] border border-slate-200 dark:border-white/10">
+          <div className="glass p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-[var(--color-border)]">
             {result && (
-              <div className="mb-5 sm:mb-6 text-center text-slate-900 dark:text-white font-semibold text-sm sm:text-base">
+              <div className="mb-4 text-center text-[var(--color-text)] font-semibold text-sm" role="status">
                 {result}
               </div>
             )}
-            <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
-              <div className="space-y-2">
-                <label htmlFor="contact-name" className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-1">Full Name</label>
-                <input
-                  id="contact-name"
-                  required
-                  name="name"
-                  type="text"
-                  placeholder="John Doe"
-                  className={inputClass}
-                />
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+              <div className="space-y-1.5">
+                <label htmlFor="contact-name" className="text-sm font-bold text-[var(--color-text-muted)] ml-1">Full Name</label>
+                <input id="contact-name" required name="name" type="text" placeholder="John Doe" className={inputClass} />
               </div>
-              <div className="space-y-2">
-                <label htmlFor="contact-email" className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-1">Email Address</label>
-                <input
-                  id="contact-email"
-                  required
-                  name="email"
-                  type="email"
-                  placeholder="john@example.com"
-                  className={inputClass}
-                />
+              <div className="space-y-1.5">
+                <label htmlFor="contact-email" className="text-sm font-bold text-[var(--color-text-muted)] ml-1">Email Address</label>
+                <input id="contact-email" required name="email" type="email" placeholder="john@example.com" className={inputClass} />
               </div>
-              <div className="space-y-2">
-                <label htmlFor="contact-phone" className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-1">Phone Number</label>
-                <input
-                  id="contact-phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="+251 900 000 000"
-                  className={inputClass}
-                />
+              <div className="space-y-1.5">
+                <label htmlFor="contact-phone" className="text-sm font-bold text-[var(--color-text-muted)] ml-1">Phone Number</label>
+                <input id="contact-phone" name="phone" type="tel" placeholder="+251 900 000 000" className={inputClass} />
               </div>
-              <div className="space-y-2">
-                <label htmlFor="contact-message" className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-1">Message</label>
+              <div className="space-y-1.5">
+                <label htmlFor="contact-message" className="text-sm font-bold text-[var(--color-text-muted)] ml-1">Message</label>
                 <textarea
                   id="contact-message"
                   required
@@ -126,12 +104,8 @@ export default function ContactUs() {
                   className={`${inputClass} resize-none`}
                 />
               </div>
-              <button
-                type="submit"
-                disabled={sending}
-                className="cursor-pointer w-full py-4 sm:py-5 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-70 disabled:cursor-not-allowed text-white rounded-2xl font-bold text-base sm:text-lg transition-colors flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/20"
-              >
-                {sending ? 'Sending...' : 'Send Message'} <Send size={20} />
+              <button type="submit" disabled={sending} className="btn-primary w-full text-base disabled:opacity-70 disabled:cursor-not-allowed">
+                {sending ? 'Sending...' : 'Send Message'} <Send size={18} />
               </button>
             </form>
           </div>

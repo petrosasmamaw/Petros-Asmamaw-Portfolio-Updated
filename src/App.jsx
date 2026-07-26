@@ -22,29 +22,34 @@ function AppContent() {
 
   const themeMode = useSelector((state) => state.theme.mode);
 
-  // Apply theme to document on mount and when theme changes
   useEffect(() => {
+    const root = document.documentElement;
     if (themeMode === 'dark') {
-      document.documentElement.classList.add('dark');
+      root.classList.add('dark');
+      root.setAttribute('data-theme', 'dark');
     } else {
-      document.documentElement.classList.remove('dark');
+      root.classList.remove('dark');
+      root.setAttribute('data-theme', 'light');
     }
   }, [themeMode]);
 
   return (
-    <div className="relative w-full min-h-screen selection:bg-indigo-500/30">
-      {/* Global Scroll Bar */}
+    <div className="relative w-full min-h-screen selection:bg-indigo-500/30 dark:selection:bg-indigo-400/25">
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-indigo-500 z-[60] origin-left"
-        style={{ scaleX }}
+        className="fixed top-0 left-0 right-0 h-1 bg-[var(--color-accent)] origin-left"
+        style={{ scaleX, zIndex: 'var(--z-toast)' }}
+        aria-hidden="true"
       />
-      
-      {/* Decorative Background */}
-      <div className="fixed inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.035] dark:opacity-[0.025] pointer-events-none z-0" aria-hidden="true"></div>
-      
+
+      <div
+        className="fixed inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.04] dark:opacity-[0.03] pointer-events-none"
+        style={{ zIndex: 'var(--z-base)' }}
+        aria-hidden="true"
+      />
+
       <Navbar />
-      
-      <main className="w-full">
+
+      <main className="relative w-full" style={{ zIndex: 1 }}>
         <Hero />
         <Expertise />
         <Skills />
@@ -53,7 +58,7 @@ function AppContent() {
         <Projects />
         <ContactUs />
       </main>
-      
+
       <Footer />
     </div>
   );
