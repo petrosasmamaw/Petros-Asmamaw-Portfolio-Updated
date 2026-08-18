@@ -5,44 +5,46 @@ import {
   Terminal, Layers, Code, HardDrive,
   Shield, Zap, Chrome, Bot, Brain, Sparkles, Workflow, CreditCard, Smartphone
 } from 'lucide-react';
-import resume from './assets/images-all/resume2.png';
-import certificate1 from './assets/images-all/Petros-Asmamaw-Udemy-Certificate.jpg';
-import certificate2 from './assets/images-all/PetrosAsmamawReact.jpg';
-import HAdmin from './assets/images-all/HAdmin.png';
-import hotel from './assets/images-all/hotel.png';
-import client from './assets/images-all/client.png';
+// Cloudinary CDN Image URLs
+const resume = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037778/portfolio/images/resume2.png';
+const certificate1 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037725/portfolio/images/Petros-Asmamaw-Udemy-Certificate.jpg';
+const certificate2 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037728/portfolio/images/PetrosAsmamawReact.jpg';
+const HAdmin = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037591/portfolio/images/HAdmin.png';
+const hotel = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037695/portfolio/images/hotel.png';
+const client = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037422/portfolio/images/client.png';
 
-import shopping from './assets/images-all/shopping.png';
-import admin from './assets/images-all/admin.png';
-import game from './assets/images-all/game.png';
-import notertk from './assets/images-all/note-rtk.png';
-import movieSearching from './assets/images-all/movie.png';
-import car from './assets/images-all/car.png';
-import notesApp from './assets/images-all/notes.png';
-import college from './assets/images-all/college.png';
-import quiz from './assets/images-all/quiz.png';
-import portfolio from './assets/images-all/portfolio.png';
-import hospitalAdmin from './assets/images-all/hospitalAdmin.png';
-import hospitalPatient from './assets/images-all/hospitalPatient.png';
-import hospitalDoctor from './assets/images-all/hospitalDoctor.png';
-import qandliai1 from './assets/images-all/qandliai1.png';
-import qandliai2 from './assets/images-all/qandliai2.png';
-import qandliai3 from './assets/images-all/qandliai3.png';
-import qandliai4 from './assets/images-all/qandliai4.png';
-import qandliai5 from './assets/images-all/qandliai5.png';
-import ElectricErp1 from './assets/images-all/ElectricErp1.jpg';
-import ElectricErp2 from './assets/images-all/ElectricErp2.jpg';
-import ElectricErp3 from './assets/images-all/ElectricErp3.jpg';
-import lms1 from './assets/images-all/lms1.png';
-import lms2 from './assets/images-all/lms2.png';
-import lms3 from './assets/images-all/lms3.png';
-import addisElectric1 from './assets/images-all/addis electric ecommrce site.png';
-import addisElectric2 from './assets/images-all/adiss electric 2.png';
-import addisElectric3 from './assets/images-all/adiss electric 3.png';
-import tamagnCheck1 from './assets/images-all/tamagn check.png';
-import tamagnCheck2 from './assets/images-all/tamagn check 3.png';
-import tamagnCheck3 from './assets/images-all/tamagn check 3 (2).png';
-import resumePdf from './assets/resume petros asmamaw 2p.pdf';
+const shopping = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037803/portfolio/images/shopping.png';
+const admin = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037353/portfolio/images/admin.png';
+const game = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037631/portfolio/images/game.png';
+const notertk = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037707/portfolio/images/note-rtk.png';
+const movieSearching = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037769/portfolio/images/movie.png';
+const car = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037411/portfolio/images/car.png';
+const notesApp = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037715/portfolio/images/notes.png';
+const college = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037776/portfolio/images/college.png';
+const quiz = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037763/portfolio/images/quiz.png';
+const portfolio = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037749/portfolio/images/portfolio.png';
+const hospitalAdmin = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037657/portfolio/images/hospitalAdmin.png';
+const hospitalPatient = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037696/portfolio/images/hospitalPatient.png';
+const hospitalDoctor = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037639/portfolio/images/hospitalDoctor.png';
+const qandliai1 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037756/portfolio/images/qandliai1.png';
+const qandliai2 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037751/portfolio/images/qandliai2.png';
+const qandliai3 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037753/portfolio/images/qandliai3.png';
+const qandliai4 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037772/portfolio/images/qandliai4.png';
+const qandliai5 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037767/portfolio/images/qandliai5.png';
+const ElectricErp1 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037513/portfolio/images/ElectricErp1.jpg';
+const ElectricErp2 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037518/portfolio/images/ElectricErp2.jpg';
+const ElectricErp3 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037524/portfolio/images/ElectricErp3.jpg';
+const lms1 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037650/portfolio/images/lms1.png';
+const lms2 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037657/portfolio/images/lms2.png';
+const lms3 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037666/portfolio/images/lms3.png';
+const addisElectric1 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037315/portfolio/images/addis_electric_ecommrce_site.png';
+const addisElectric2 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037345/portfolio/images/adiss_electric_2.png';
+const addisElectric3 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037347/portfolio/images/adiss_electric_3.png';
+const tamagnCheck1 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037787/portfolio/images/tamagn_check.png';
+const tamagnCheck2 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037783/portfolio/images/tamagn_check_3.png';
+const tamagnCheck3 = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037783/portfolio/images/tamagn_check_3__2_.png';
+const resumePdf = 'https://res.cloudinary.com/asmiy35i/raw/upload/v1787037795/portfolio/documents/resume_petros_asmamaw_2p.pdf';
+
 
 
 export const EXPERTISE_CARDS = [

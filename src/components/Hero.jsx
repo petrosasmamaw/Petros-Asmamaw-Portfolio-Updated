@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, Linkedin, Send, ArrowRight } from 'lucide-react';
-import myPhoto from '../assets/images-all/my-photo1.png';
+const myPhoto = 'https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037719/portfolio/images/my-photo1.png';
 
 const socials = [
   {
