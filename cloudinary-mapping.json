@@ -205,9 +205,9 @@
   "photo.jpg": {
     "fileName": "photo.jpg",
     "originalName": "photo.jpg",
-    "publicId": "portfolio/images/photo",
-    "secureUrl": "https://res.cloudinary.com/asmiy35i/image/upload/v1787037725/portfolio/images/photo.jpg",
-    "optimizedUrl": "https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787037725/portfolio/images/photo.jpg"
+    "publicId": "portfolio/images/hero_photo",
+    "secureUrl": "https://res.cloudinary.com/asmiy35i/image/upload/v1787038695/portfolio/images/hero_photo.jpg",
+    "optimizedUrl": "https://res.cloudinary.com/asmiy35i/image/upload/f_auto,q_auto/v1787038695/portfolio/images/hero_photo.jpg"
   },
   "Petros-Asmamaw-Udemy-Certificate.jpg": {
     "fileName": "Petros-Asmamaw-Udemy-Certificate.jpg",
